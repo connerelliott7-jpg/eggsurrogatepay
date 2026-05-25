@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /thank-you.html
+
+Sitemap: https://eggsurrogatepay.com/sitemap.xml
