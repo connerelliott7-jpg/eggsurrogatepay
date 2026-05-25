@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surrogate Compensation Calculator 2025 | How Much Do Surrogates Make?</title>
+  <meta name="description" content="Find out exactly how much surrogates make in your state. Use our free calculator — see your personalized pay estimate including base pay, allowances & more.">
+  <link rel="canonical" href="https://eggsurrogatepay.com/surrogate-pay.html">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo">EggSurrogate<span>Pay</span></a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav__links" id="nav-links">
+        <a href="/egg-donor-pay.html">Egg Donor Pay</a>
+        <a href="/surrogate-pay.html" style="color:var(--primary);font-weight:700;">Surrogate Pay</a>
+        <a href="/surrogate-application.html" class="btn--nav">Apply Now</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Hero -->
+<div class="page-hero">
+  <div class="container">
+    <h1 class="page-hero__title">Surrogate Compensation Calculator</h1>
+    <p class="page-hero__subtitle">See your full compensation breakdown — base pay, monthly allowance, lost wages & more.</p>
+  </div>
+</div>
+
+<!-- Calculator -->
+<section class="section">
+  <div class="container container--narrow">
+    <div class="calculator">
+      <div class="calculator__header">
+        <h2>How Much Could You Earn as a Surrogate?</h2>
+        <p>Based on your location, experience & prior births</p>
+      </div>
+      <div class="calculator__body">
+        <form id="surrogate-calc" novalidate>
+
+          <!-- Zip Code -->
+          <div class="form-group">
+            <label for="sur-zip">Your Zip Code <span class="required">*</span></label>
+            <input
+              type="tel"
+              id="sur-zip"
+              class="form-control"
+              placeholder="90210"
+              maxlength="5"
+              data-zip-input
+              data-detect-target="sur-zip-detect"
+              data-state-target="sur-state-hidden"
+            >
+            <div id="sur-zip-detect" class="zip-detect"></div>
+            <div id="sur-zip-error" class="field-error"></div>
+            <input type="hidden" id="sur-state-hidden">
+          </div>
+
+          <!-- Experience -->
+          <div class="form-group">
+            <label>Have you been a surrogate before? <span class="required">*</span></label>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="sur-experience" value="first">
+                <span>No, this would be my first time</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="sur-experience" value="once">
+                <span>Yes, I've been a surrogate once</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="sur-experience" value="two_plus">
+                <span>Yes, I've been a surrogate 2+ times</span>
+              </label>
+            </div>
+            <div id="sur-experience-error" class="field-error"></div>
+          </div>
+
+          <!-- Prior Births -->
+          <div class="form-group">
+            <label for="sur-births">How many times have you given birth? <span class="required">*</span></label>
+            <select id="sur-births" class="form-control">
+              <option value="">Select…</option>
+              <option value="0">0 times</option>
+              <option value="1">1 time</option>
+              <option value="2">2 times</option>
+              <option value="3">3 times</option>
+              <option value="4">4 times</option>
+              <option value="5">5 times</option>
+              <option value="6">6+ times</option>
+            </select>
+            <div id="sur-births-error" class="field-error"></div>
+          </div>
+
+          <!-- Age -->
+          <div class="form-group">
+            <label for="sur-age">Your Age <span class="required">*</span></label>
+            <select id="sur-age" class="form-control">
+              <option value="">Select your age…</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+              <option value="32">32</option>
+              <option value="33">33</option>
+              <option value="34">34</option>
+              <option value="35">35</option>
+              <option value="36">36</option>
+              <option value="37">37</option>
+              <option value="38">38</option>
+              <option value="39">39</option>
+              <option value="40">40</option>
+              <option value="41">41</option>
+              <option value="42">42</option>
+              <option value="43">43</option>
+              <option value="44">44</option>
+              <option value="45">45</option>
+              <option value="46">46</option>
+              <option value="47">47</option>
+              <option value="48">48</option>
+              <option value="49">49</option>
+              <option value="50">50</option>
+            </select>
+            <div id="sur-age-error" class="field-error"></div>
+          </div>
+
+          <button type="button" class="btn btn--primary btn--full" data-calc-btn style="font-size:1.05rem; padding:16px;">
+            Calculate My Compensation →
+          </button>
+        </form>
+
+        <!-- Results -->
+        <div id="surrogate-results" class="results"></div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Breakdown Section -->
+<section class="section section--alt">
+  <div class="container container--narrow">
+    <div class="text-center mb-8">
+      <span class="badge">Full Breakdown</span>
+      <h2 class="section__title">What's Included in Surrogate Pay</h2>
+      <p class="section__subtitle">Surrogate compensation is more than just base pay — here's everything you can expect.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+      <div class="feature-card" style="text-align:left; padding:24px;">
+        <div style="font-size:1.6rem; margin-bottom:12px;">💰</div>
+        <h3 style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:6px;">Base Compensation</h3>
+        <p style="font-size:0.9rem; color:var(--text-light);">Your primary payment for carrying the pregnancy. $40,000–$80,000 depending on state and experience.</p>
+      </div>
+      <div class="feature-card" style="text-align:left; padding:24px;">
+        <div style="font-size:1.6rem; margin-bottom:12px;">📅</div>
+        <h3 style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:6px;">Monthly Allowance</h3>
+        <p style="font-size:0.9rem; color:var(--text-light);">$3,000–$6,000/month throughout the pregnancy for food, transportation, and miscellaneous expenses.</p>
+      </div>
+      <div class="feature-card" style="text-align:left; padding:24px;">
+        <div style="font-size:1.6rem; margin-bottom:12px;">👗</div>
+        <h3 style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:6px;">Maternity Clothing</h3>
+        <p style="font-size:0.9rem; color:var(--text-light);">$1,000–$2,000 allowance for maternity clothing throughout the pregnancy.</p>
+      </div>
+      <div class="feature-card" style="text-align:left; padding:24px;">
+        <div style="font-size:1.6rem; margin-bottom:12px;">💼</div>
+        <h3 style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:6px;">Lost Wages</h3>
+        <p style="font-size:0.9rem; color:var(--text-light);">$3,000–$10,000 reimbursement for time missed from work due to appointments or recovery.</p>
+      </div>
+    </div>
+    <p style="margin-top:20px; font-size:0.85rem; color:var(--text-muted); text-align:center;">Additional benefits may include life insurance, legal fees, travel reimbursement, and more — varies by agency.</p>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="section" id="how-it-works">
+  <div class="container container--narrow">
+    <div class="text-center mb-8">
+      <span class="badge">The Process</span>
+      <h2 class="section__title">How Surrogacy Works</h2>
+    </div>
+    <div class="steps-list">
+      <div class="step-item">
+        <div class="step-item__icon">📋</div>
+        <div>
+          <div class="step-item__title">Apply & Get Matched</div>
+          <p class="step-item__text">Submit your application. We match you with top agencies in your state within 48 hours. Phone screening typically happens within 1 week.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-item__icon">🩺</div>
+        <div>
+          <div class="step-item__title">Medical & Psychological Evaluation</div>
+          <p class="step-item__text">Comprehensive health screening, psychological evaluation, and background check — all coordinated and paid for by the agency.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-item__icon">👨‍👩‍👧</div>
+        <div>
+          <div class="step-item__title">Match with Intended Parents</div>
+          <p class="step-item__text">You'll review profiles and meet with potential intended parents. You always have the right to say no to any match.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-item__icon">🍼</div>
+        <div>
+          <div class="step-item__title">Embryo Transfer & Pregnancy</div>
+          <p class="step-item__text">After legal contracts are signed, the embryo transfer takes place. Monthly compensation begins immediately.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-item__icon">💰</div>
+        <div>
+          <div class="step-item__title">Delivery & Final Payment</div>
+          <p class="step-item__text">Remaining compensation is disbursed around delivery. Post-delivery allowances continue for up to 6 weeks.</p>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <a href="/surrogate-application.html" class="btn btn--primary btn--lg">Start Your Application →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--alt">
+  <div class="container container--narrow">
+    <div class="text-center mb-8">
+      <span class="badge">FAQ</span>
+      <h2 class="section__title">Surrogate FAQs</h2>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:16px;">
+      <details style="background:white; border:1px solid var(--border); border-radius:var(--radius-sm); padding:20px;">
+        <summary style="font-weight:700; cursor:pointer; font-size:1rem; color:var(--primary);">Do I need to have had children to be a surrogate?</summary>
+        <p style="margin-top:12px; color:var(--text-light); font-size:0.95rem; line-height:1.7;">Yes. Most agencies require surrogates to have previously given birth to at least one child whom they are currently parenting. This requirement ensures you understand the physical and emotional aspects of pregnancy and childbirth.</p>
+      </details>
+      <details style="background:white; border:1px solid var(--border); border-radius:var(--radius-sm); padding:20px;">
+        <summary style="font-weight:700; cursor:pointer; font-size:1rem; color:var(--primary);">Is surrogate compensation taxable?</summary>
+        <p style="margin-top:12px; color:var(--text-light); font-size:0.95rem; line-height:1.7;">The taxability of surrogate compensation varies by jurisdiction and circumstance. Some tax professionals argue it's not taxable income; others disagree. We strongly recommend consulting a tax professional experienced in surrogacy compensation before filing.</p>
+      </details>
+      <details style="background:white; border:1px solid var(--border); border-radius:var(--radius-sm); padding:20px;">
+        <summary style="font-weight:700; cursor:pointer; font-size:1rem; color:var(--primary);">How long does the surrogacy process take?</summary>
+        <p style="margin-top:12px; color:var(--text-light); font-size:0.95rem; line-height:1.7;">From initial application to birth, the surrogacy process typically takes 18–24 months. This includes screening and matching (3–6 months), legal contracts (1–2 months), embryo transfer preparation (1–2 months), and the pregnancy itself (9 months).</p>
+      </details>
+      <details style="background:white; border:1px solid var(--border); border-radius:var(--radius-sm); padding:20px;">
+        <summary style="font-weight:700; cursor:pointer; font-size:1rem; color:var(--primary);">What are the basic surrogate requirements?</summary>
+        <p style="margin-top:12px; color:var(--text-light); font-size:0.95rem; line-height:1.7;">Most agencies require surrogates to be: 21–40 years old, have had at least one prior birth with no major complications, be non-smokers, have a BMI under 32, be financially stable (not receiving government assistance), and pass psychological and medical evaluations. Requirements vary by agency.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__brand">EggSurrogate<span>Pay</span></div>
+        <p class="footer__desc">Free compensation calculators and application platform for egg donors and surrogates. Connecting qualified candidates with top-rated agencies nationwide.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Egg Donation</h4>
+        <a href="/egg-donor-pay.html">Compensation Calculator</a>
+        <a href="/egg-donor-application.html">Apply as Egg Donor</a>
+      </div>
+      <div class="footer__col">
+        <h4>Surrogacy</h4>
+        <a href="/surrogate-pay.html">Compensation Calculator</a>
+        <a href="/surrogate-application.html">Apply as Surrogate</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 EggSurrogatePay.com · hello@eggsurrogatepay.com</span>
+      <div class="footer__legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Methodology</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/zip-lookup.js"></script>
+<script src="/assets/calculator.js"></script>
+<script>
+  document.getElementById('nav-toggle').addEventListener('click', function() {
+    document.getElementById('nav-links').classList.toggle('open');
+  });
+</script>
+</body>
+</html>

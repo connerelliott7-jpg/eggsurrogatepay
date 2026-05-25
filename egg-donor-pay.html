@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Egg Donor Compensation Calculator 2025 | How Much Do Egg Donors Make?</title>
+  <meta name="description" content="Find out exactly how much egg donors make in your state. Use our free calculator — see your personalized compensation estimate in under 60 seconds.">
+  <link rel="canonical" href="https://eggsurrogatepay.com/egg-donor-pay.html">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo">EggSurrogate<span>Pay</span></a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav__links" id="nav-links">
+        <a href="/egg-donor-pay.html" style="color:var(--primary);font-weight:700;">Egg Donor Pay</a>
+        <a href="/surrogate-pay.html">Surrogate Pay</a>
+        <a href="/egg-donor-application.html" class="btn--nav">Apply Now</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Hero -->
+<div class="page-hero">
+  <div class="container">
+    <h1 class="page-hero__title">Egg Donor Compensation Calculator</h1>
+    <p class="page-hero__subtitle">Enter your details below to see your personalized pay estimate — takes under 60 seconds.</p>
+  </div>
+</div>
+
+<!-- Calculator -->
+<section class="section">
+  <div class="container container--narrow">
+
+    <div class="calculator">
+      <div class="calculator__header">
+        <h2>How Much Could You Earn as an Egg Donor?</h2>
+        <p>Based on your location, experience & education</p>
+      </div>
+      <div class="calculator__body">
+        <form id="egg-donor-calc" novalidate>
+
+          <!-- Zip Code -->
+          <div class="form-group">
+            <label for="ed-zip">Your Zip Code <span class="required">*</span></label>
+            <input
+              type="tel"
+              id="ed-zip"
+              class="form-control"
+              placeholder="90210"
+              maxlength="5"
+              data-zip-input
+              data-detect-target="ed-zip-detect"
+              data-state-target="ed-state-hidden"
+            >
+            <div id="ed-zip-detect" class="zip-detect"></div>
+            <div id="ed-zip-error" class="field-error"></div>
+            <input type="hidden" id="ed-state-hidden">
+          </div>
+
+          <!-- Experience -->
+          <div class="form-group">
+            <label>Have you donated eggs before? <span class="required">*</span></label>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="ed-experience" value="first">
+                <span>No, this would be my first time</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="ed-experience" value="once">
+                <span>Yes, I've donated once</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="ed-experience" value="two_plus">
+                <span>Yes, I've donated 2+ times</span>
+              </label>
+            </div>
+            <div id="ed-experience-error" class="field-error"></div>
+          </div>
+
+          <!-- Education -->
+          <div class="form-group">
+            <label for="ed-education">Highest education level completed <span class="required">*</span></label>
+            <select id="ed-education" class="form-control">
+              <option value="">Select your education level…</option>
+              <option value="hs">High school diploma / GED</option>
+              <option value="some_college">Some college</option>
+              <option value="associates">Associate's degree</option>
+              <option value="bachelors">Bachelor's degree</option>
+              <option value="masters">Master's degree or higher</option>
+            </select>
+            <div id="ed-education-error" class="field-error"></div>
+          </div>
+
+          <!-- Age -->
+          <div class="form-group">
+            <label for="ed-age">Your Age <span class="required">*</span></label>
+            <select id="ed-age" class="form-control">
+              <option value="">Select your age…</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+              <option value="32">32</option>
+              <option value="33">33</option>
+              <option value="34">34</option>
+              <option value="35">35</option>
+              <option value="36">36</option>
+              <option value="37">37</option>
+              <option value="38">38</option>
+              <option value="39">39</option>
+              <option value="40">40</option>
+              <option value="41">41</option>
+              <option value="42">42</option>
+              <option value="43">43</option>
+              <option value="44">44</option>
+              <option value="45">45</option>
+              <option value="46">46</option>
+              <option value="47">47</option>
+              <option value="48">48</option>
+              <option value="49">49</option>
+              <option value="50">50</option>
+            </select>
+            <div id="ed-age-error" class="field-error"></div>
+          </div>
+
+          <button type="button" class="btn btn--primary btn--full" data-calc-btn style="font-size:1.05rem; padding:16px;">
+            Calculate My Compensation →
+          </button>
+        </form>
+
+        <!-- Results -->
+        <div id="egg-donor-results" class="results"></div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="section section--alt" id="how-it-works">
+  <div class="container container--narrow">
+    <div class="text-center mb-8">
+      <span class="badge">The Process</span>
+      <h2 class="section__title">How Egg Donation Works</h2>
+    </div>
+    <div class="steps-list">
+      <div class="step-item">
+        <div class="step-item__icon">📋</div>
+        <div>
+          <div class="step-item__title">Apply Online (5 minutes)</div>
+          <p class="step-item__text">Submit our quick application. We'll match you with partner agencies in your area within 48 hours.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-item__icon">🩺</div>
+        <div>
+          <div class="step-item__title">Medical & Psychological Screening</div>
+          <p class="step-item__text">A licensed agency handles all evaluations at no cost to you. This typically takes 2–4 weeks.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-item__icon">💉</div>
+        <div>
+          <div class="step-item__title">Stimulation & Retrieval</div>
+          <p class="step-item__text">You'll self-administer hormone injections for 10–14 days, then attend the egg retrieval procedure (outpatient, ~30 min).</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-item__icon">💰</div>
+        <div>
+          <div class="step-item__title">Receive Your Compensation</div>
+          <p class="step-item__text">Payment is typically received within 1–2 weeks of the retrieval procedure.</p>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <a href="/egg-donor-application.html" class="btn btn--primary btn--lg">Start Your Application →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container container--narrow">
+    <div class="text-center mb-8">
+      <span class="badge">FAQ</span>
+      <h2 class="section__title">Common Questions</h2>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:16px;">
+      <details style="background:var(--bg-light); border:1px solid var(--border); border-radius:var(--radius-sm); padding:20px;">
+        <summary style="font-weight:700; cursor:pointer; font-size:1rem; color:var(--primary);">How much do egg donors actually make?</summary>
+        <p style="margin-top:12px; color:var(--text-light); font-size:0.95rem; line-height:1.7;">First-time egg donors typically earn $6,000–$15,000 depending on location and qualifications. Repeat donors and those in high-demand states like California and New York can earn $12,000–$20,000+ per cycle. Education level can also increase your compensation.</p>
+      </details>
+      <details style="background:var(--bg-light); border:1px solid var(--border); border-radius:var(--radius-sm); padding:20px;">
+        <summary style="font-weight:700; cursor:pointer; font-size:1rem; color:var(--primary);">Is egg donation safe?</summary>
+        <p style="margin-top:12px; color:var(--text-light); font-size:0.95rem; line-height:1.7;">Egg donation is generally considered safe when performed by licensed medical professionals. Like any medical procedure, there are risks (primarily ovarian hyperstimulation syndrome, or OHSS), which agencies screen for and monitor carefully. All partner agencies follow ASRM and FDA guidelines.</p>
+      </details>
+      <details style="background:var(--bg-light); border:1px solid var(--border); border-radius:var(--radius-sm); padding:20px;">
+        <summary style="font-weight:700; cursor:pointer; font-size:1rem; color:var(--primary);">How long does the process take?</summary>
+        <p style="margin-top:12px; color:var(--text-light); font-size:0.95rem; line-height:1.7;">From initial application to receiving payment, the process typically takes 3–6 months. This includes agency matching (1–4 weeks), screening (2–4 weeks), matching with intended parents (1–3 months), and the actual cycle (3–4 weeks).</p>
+      </details>
+      <details style="background:var(--bg-light); border:1px solid var(--border); border-radius:var(--radius-sm); padding:20px;">
+        <summary style="font-weight:700; cursor:pointer; font-size:1rem; color:var(--primary);">How many times can I donate?</summary>
+        <p style="margin-top:12px; color:var(--text-light); font-size:0.95rem; line-height:1.7;">ASRM guidelines recommend a maximum of 6 egg donation cycles per donor. Many donors complete 2–4 cycles over several years, increasing their compensation with each cycle.</p>
+      </details>
+      <details style="background:var(--bg-light); border:1px solid var(--border); border-radius:var(--radius-sm); padding:20px;">
+        <summary style="font-weight:700; cursor:pointer; font-size:1rem; color:var(--primary);">Is egg donor compensation taxable?</summary>
+        <p style="margin-top:12px; color:var(--text-light); font-size:0.95rem; line-height:1.7;">Yes, egg donor compensation is generally considered taxable income. You'll typically receive a 1099 form and should report it. We recommend consulting a tax professional for guidance on your specific situation.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__brand">EggSurrogate<span>Pay</span></div>
+        <p class="footer__desc">Free compensation calculators and application platform for egg donors and surrogates. Connecting qualified candidates with top-rated agencies nationwide.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Egg Donation</h4>
+        <a href="/egg-donor-pay.html">Compensation Calculator</a>
+        <a href="/egg-donor-application.html">Apply as Egg Donor</a>
+        <a href="#how-it-works">How It Works</a>
+      </div>
+      <div class="footer__col">
+        <h4>Surrogacy</h4>
+        <a href="/surrogate-pay.html">Compensation Calculator</a>
+        <a href="/surrogate-application.html">Apply as Surrogate</a>
+        <a href="/#how-it-works">How It Works</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 EggSurrogatePay.com · hello@eggsurrogatepay.com</span>
+      <div class="footer__legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Methodology</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/zip-lookup.js"></script>
+<script src="/assets/calculator.js"></script>
+<script>
+  document.getElementById('nav-toggle').addEventListener('click', function() {
+    document.getElementById('nav-links').classList.toggle('open');
+  });
+</script>
+</body>
+</html>
