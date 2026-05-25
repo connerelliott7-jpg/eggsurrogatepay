@@ -31,11 +31,10 @@ Egg donor and surrogate compensation calculator and application platform.
 ## Configuration
 
 ### Formspree
-- **Endpoint:** `https://formspree.io/f/XXXXXXXX` (replace in both application forms)
+- **Endpoint:** `https://formspree.io/f/mvzywadq`
 - Forms: `egg-donor-application.html`, `surrogate-application.html`
 - Success redirect: `/thank-you.html`
-
-To update: search for `XXXXXXXX` in both application HTML files and replace with your real Formspree endpoint ID.
+- Dashboard: https://formspree.io/forms
 
 ### GA4
 - **Property ID:** `G-XXXXXXXXXX` (replace in all pages)
