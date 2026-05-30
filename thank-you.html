@@ -146,18 +146,17 @@
 
       <div class="thankyou__icon">✅</div>
       <h1 class="thankyou__title">You're all set!</h1>
-      <p class="thankyou__subtitle">
-        Whether you submitted an application or signed up for updates —
-        we got it. Here's what to expect next.
+      <p class="thankyou__subtitle" id="thankyou-subtitle">
+        Your application has been received. Here's what to expect next.
       </p>
 
       <div class="email-notice">
         📧 Check your inbox for a confirmation email. If you don't see it within a few minutes, check your spam folder.
       </div>
 
-      <!-- If you applied -->
-      <div class="thankyou__card">
-        <h2>If you submitted an application</h2>
+      <!-- Egg donor timeline (shown by default, hidden for surrogates) -->
+      <div class="thankyou__card" id="timeline-egg-donor">
+        <h2>If you applied as an egg donor</h2>
         <div class="steps-list">
           <div class="step-item">
             <div class="step-item__icon">📧</div>
@@ -184,28 +183,49 @@
             <div class="step-item__icon">💰</div>
             <div>
               <div class="step-item__title">Timeline to first compensation</div>
-              <p class="step-item__text">Egg donors typically begin earning within 3–6 months. Surrogates within 18–24 months from the start of the process.</p>
+              <p class="step-item__text">Egg donors typically begin earning within 3–6 months of starting the process.</p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- If you signed up for email -->
-      <div class="thankyou__card">
-        <h2>If you signed up for updates</h2>
+      <!-- Surrogate timeline (hidden by default, shown for surrogates) -->
+      <div class="thankyou__card" id="timeline-surrogate" style="display:none;">
+        <h2>If you applied as a surrogate</h2>
         <div class="steps-list">
           <div class="step-item">
-            <div class="step-item__icon">📬</div>
+            <div class="step-item__icon">📧</div>
             <div>
-              <div class="step-item__title">You're on the list</div>
-              <p class="step-item__text">We'll send helpful resources on compensation ranges, the donation process, and what to expect — no spam, ever.</p>
+              <div class="step-item__title">Within 48 hours</div>
+              <p class="step-item__text">Partner agencies receive and review your application. You may get initial outreach by email.</p>
             </div>
           </div>
           <div class="step-item">
-            <div class="step-item__icon">🔔</div>
+            <div class="step-item__icon">📞</div>
             <div>
-              <div class="step-item__title">Ready to take the next step?</div>
-              <p class="step-item__text">Browse our compensation guides or apply when you're ready. There's no rush — we'll be here.</p>
+              <div class="step-item__title">Within 1 week</div>
+              <p class="step-item__text">Qualified applicants are contacted for a phone screening to discuss your goals and surrogacy timeline.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-item__icon">🏥</div>
+            <div>
+              <div class="step-item__title">Within 2–4 weeks</div>
+              <p class="step-item__text">If accepted, you'll complete medical and psychological evaluations — all costs are covered by the intended parents.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-item__icon">⚖️</div>
+            <div>
+              <div class="step-item__title">Legal agreements (2–3 months)</div>
+              <p class="step-item__text">An attorney (paid by the intended parents) will review and finalize your surrogacy contract.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-item__icon">💰</div>
+            <div>
+              <div class="step-item__title">Timeline to first compensation</div>
+              <p class="step-item__text">Surrogates typically begin receiving compensation within 18–24 months of starting the process. Monthly payments begin after embryo transfer.</p>
             </div>
           </div>
         </div>
@@ -278,6 +298,20 @@
   document.getElementById('nav-toggle').addEventListener('click', function() {
     document.getElementById('nav-links').classList.toggle('open');
   });
+
+  // Show surrogate-specific timeline if redirected from surrogate form
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var type = params.get('type');
+    if (type === 'surrogate') {
+      var eggCard = document.getElementById('timeline-egg-donor');
+      var surCard = document.getElementById('timeline-surrogate');
+      var subtitle = document.getElementById('thankyou-subtitle');
+      if (eggCard) eggCard.style.display = 'none';
+      if (surCard) surCard.style.display = 'block';
+      if (subtitle) subtitle.textContent = 'Your surrogate application has been received. Here\'s what to expect next.';
+    }
+  })();
 </script>
 </body>
 </html>

@@ -46,13 +46,24 @@
 <!-- Form -->
 <section class="section">
   <div class="container container--narrow">
+
+    <!-- Trust Signals -->
+    <div style="margin-bottom:24px; text-align:center;">
+      <div class="trust-bar__inner" style="justify-content:center; gap:24px; flex-wrap:wrap;">
+        <div class="trust-item">✅ Free to Apply</div>
+        <div class="trust-item">🔒 SSL Encrypted</div>
+        <div class="trust-item">🏥 Licensed Agencies Only</div>
+        <div class="trust-item">💰 No Hidden Fees</div>
+      </div>
+    </div>
+
     <div class="calculator">
 
       <!-- Progress Bar -->
       <div class="progress-bar">
-        <div class="progress-bar__label" id="progress-label">Step 1 of 5</div>
+        <div class="progress-bar__label" id="progress-label">Step 1 of 6</div>
         <div class="progress-bar__track">
-          <div class="progress-bar__fill" id="progress-fill" style="width:0%"></div>
+          <div class="progress-bar__fill" id="progress-fill" style="width:17%"></div>
         </div>
       </div>
 
@@ -62,7 +73,7 @@
         action="https://formspree.io/f/mvzywadq"
         method="POST"
         data-service-type="surrogate"
-        data-total-steps="5"
+        data-total-steps="6"
         novalidate
       >
 
@@ -73,7 +84,7 @@
         <input type="hidden" name="age_flag" id="age-flag">
         <input type="hidden" name="bmi_flag" id="bmi-flag">
         <input type="hidden" name="state" id="form-state">
-        <input type="hidden" name="_next" value="https://eggsurrogatepay.com/thank-you.html">
+        <input type="hidden" name="_next" value="https://eggsurrogatepay.com/thank-you.html?type=surrogate">
         <input type="hidden" name="_subject" value="New Surrogate Application">
 
         <!-- =====================
@@ -195,10 +206,10 @@
         </div>
 
         <!-- ==================================
-             STEP 4: Surrogate Experience & Health
+             STEP 4: Pregnancy History
              ================================== -->
         <div class="form-step" id="step-4">
-          <h2 class="form-step__title">Experience & Health</h2>
+          <h2 class="form-step__title">Pregnancy History</h2>
           <p class="form-step__subtitle">Agencies use this information to assess your candidacy.</p>
 
           <div class="form-group">
@@ -246,6 +257,19 @@
             <div id="pregnancy_complications-error" class="field-error"></div>
           </div>
 
+          <div class="form-nav">
+            <button type="button" class="btn btn--back" data-prev-step="3">← Back</button>
+            <button type="button" class="btn btn--primary" data-next-step="5">Next: Background →</button>
+          </div>
+        </div>
+
+        <!-- ==================================
+             STEP 5: Surrogacy Background
+             ================================== -->
+        <div class="form-step" id="step-5">
+          <h2 class="form-step__title">Your Background</h2>
+          <p class="form-step__subtitle">A few more questions to complete your profile.</p>
+
           <div class="form-group">
             <label>Have you been a surrogate before? <span class="required">*</span></label>
             <div class="radio-group" data-radio-required="prior_surrogacy">
@@ -285,6 +309,7 @@
                 <span>Married / Partnered (partner not yet aware)</span>
               </label>
             </div>
+            <p class="hint" style="margin-top:6px;">If your partner isn't yet aware, that's okay — agencies can advise on how to approach that conversation. It does not affect your eligibility.</p>
             <div id="relationship_status-error" class="field-error"></div>
           </div>
 
@@ -304,15 +329,15 @@
           </div>
 
           <div class="form-nav">
-            <button type="button" class="btn btn--back" data-prev-step="3">← Back</button>
-            <button type="button" class="btn btn--primary" data-next-step="5">Next: Final Details →</button>
+            <button type="button" class="btn btn--back" data-prev-step="4">← Back</button>
+            <button type="button" class="btn btn--primary" data-next-step="6">Next: Final Details →</button>
           </div>
         </div>
 
         <!-- ================================
-             STEP 5: Final Details & Consent
+             STEP 6: Final Details & Consent
              ================================ -->
-        <div class="form-step" id="step-5">
+        <div class="form-step" id="step-6">
           <h2 class="form-step__title">Final Details & Consent</h2>
           <p class="form-step__subtitle">Almost done! Just a few final questions.</p>
 
@@ -343,24 +368,20 @@
               </label>
               <label class="checkbox-option">
                 <input type="checkbox" name="consent_agencies" value="yes" data-consent-required>
-                <span>I understand that partner agencies will contact me for screening.</span>
+                <span>I understand that partner agencies will contact me by email or phone for screening.</span>
               </label>
               <label class="checkbox-option">
                 <input type="checkbox" name="consent_terms" value="yes" data-consent-required>
-                <span>I agree to the <a href="#" style="color:var(--primary);">Privacy Policy</a> and <a href="#" style="color:var(--primary);">Terms of Service</a>.</span>
-              </label>
-              <label class="checkbox-option">
-                <input type="checkbox" name="consent_contact" value="yes" data-consent-required>
-                <span>I consent to receive emails and calls from partner agencies regarding my application.</span>
+                <span>I agree to the <a href="/privacy-policy.html" style="color:var(--primary);">Privacy Policy</a> and <a href="/terms-of-service.html" style="color:var(--primary);">Terms of Service</a>.</span>
               </label>
             </div>
             <div id="consent-error" class="field-error"></div>
           </div>
 
           <div class="form-nav" style="justify-content:space-between;">
-            <button type="button" class="btn btn--back" data-prev-step="4">← Back</button>
-            <button type="button" id="submit-btn" class="btn btn--secondary" style="padding:16px 32px; font-size:1.05rem;">
-              Submit Application →
+            <button type="button" class="btn btn--back" data-prev-step="5">← Back</button>
+            <button type="button" id="submit-btn" class="btn btn--primary" style="padding:16px 32px; font-size:1.05rem;">
+              Submit &amp; Get Matched →
             </button>
           </div>
 
@@ -372,15 +393,6 @@
       </form>
     </div>
 
-    <!-- Trust Signals -->
-    <div style="margin-top:24px; text-align:center;">
-      <div class="trust-bar__inner" style="justify-content:center; gap:24px; flex-wrap:wrap;">
-        <div class="trust-item">✅ Free to Apply</div>
-        <div class="trust-item">🔒 SSL Encrypted</div>
-        <div class="trust-item">🏥 Licensed Agencies Only</div>
-        <div class="trust-item">💰 No Hidden Fees</div>
-      </div>
-    </div>
   </div>
 </section>
 

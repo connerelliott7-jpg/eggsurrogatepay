@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const target = document.getElementById('step-' + step);
     if (target) target.classList.add('active');
 
-    const pct = Math.round(((step - 1) / totalSteps) * 100);
+    const pct = Math.round((step / totalSteps) * 100);
     if (progressFill) progressFill.style.width = pct + '%';
     if (progressLabel) progressLabel.textContent = 'Step ' + step + ' of ' + totalSteps;
 
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (submitBtn) {
     submitBtn.addEventListener('click', function (e) {
       e.preventDefault();
-      if (!validateStep(5)) return;
+      if (!validateStep(totalSteps)) return;
       calculateHiddenFields();
       multiForm.submit();
     });
@@ -173,8 +173,8 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    // Step 5 required checkboxes
-    if (step === 5) {
+    // Final step required checkboxes
+    if (step === totalSteps) {
       const requiredBoxes = stepEl.querySelectorAll('[data-consent-required]');
       requiredBoxes.forEach(function (box) {
         if (!box.checked) {
