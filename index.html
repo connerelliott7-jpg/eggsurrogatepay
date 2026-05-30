@@ -89,7 +89,7 @@
       Earn <em>$6,000 – $98,000</em>
     </h1>
     <p class="hero__subtitle">
-      Select your state to see your personalized estimate.
+      Enter your zip code to see your personalized estimate.
     </p>
 
     <!-- Mini Calculator Widget -->
@@ -99,16 +99,14 @@
         <button class="hero-calc__tab" data-tab="sur">Surrogate</button>
       </div>
       <div class="hero-calc__panel" id="hc-egg">
-        <select id="hc-egg-state" class="hero-calc__select" aria-label="Select your state">
-          <option value="">— Select your state —</option>
-        </select>
+        <input type="tel" id="hc-egg-zip" class="hero-calc__select" placeholder="Enter your zip code" maxlength="5" inputmode="numeric" autocomplete="postal-code" aria-label="Enter your zip code">
+        <div class="zip-detect" id="hc-egg-detect"></div>
         <p class="hero-calc__result" id="hc-egg-result"></p>
         <a href="/egg-donor-pay.html" class="btn btn--secondary btn--lg hero-calc__cta" id="hc-egg-cta" style="display:none;" onclick="hcTrack('egg_donor', this)">Get Full Estimate →</a>
       </div>
       <div class="hero-calc__panel" id="hc-sur" style="display:none;">
-        <select id="hc-sur-state" class="hero-calc__select" aria-label="Select your state">
-          <option value="">— Select your state —</option>
-        </select>
+        <input type="tel" id="hc-sur-zip" class="hero-calc__select" placeholder="Enter your zip code" maxlength="5" inputmode="numeric" autocomplete="postal-code" aria-label="Enter your zip code">
+        <div class="zip-detect" id="hc-sur-detect"></div>
         <p class="hero-calc__result" id="hc-sur-result"></p>
         <a href="/surrogate-pay.html" class="btn btn--secondary btn--lg hero-calc__cta" id="hc-sur-cta" style="display:none;" onclick="hcTrack('surrogate', this)">Get Full Estimate →</a>
       </div>
@@ -375,10 +373,8 @@
   });
 </script>
 <script>
-// Hero mini-calculator
+// Hero mini-calculator — zip-code driven
 (function () {
-  // tier1Egg: CA NY MA CT NJ | tier1Sur: + DE | tier2: WA OR IL TX CO FL GA | tier3: everything else
-  // Egg: first-time, base + $1k-$2k expenses. Sur: first-time, base + $7k-$18k allowances.
   var ED = {
     'AL':[7000,12000],'AK':[7000,12000],'AZ':[7000,12000],'AR':[7000,12000],
     'CA':[11000,17000],'CO':[9000,14000],'CT':[11000,17000],'DE':[7000,12000],
@@ -409,39 +405,49 @@
     'VT':[47000,73000],'VA':[47000,73000],'WA':[57000,83000],'WV':[47000,73000],
     'WI':[47000,73000],'WY':[47000,73000]
   };
-  var STATES = [
-    ['AL','Alabama'],['AK','Alaska'],['AZ','Arizona'],['AR','Arkansas'],['CA','California'],
-    ['CO','Colorado'],['CT','Connecticut'],['DE','Delaware'],['FL','Florida'],['GA','Georgia'],
-    ['HI','Hawaii'],['ID','Idaho'],['IL','Illinois'],['IN','Indiana'],['IA','Iowa'],
-    ['KS','Kansas'],['KY','Kentucky'],['LA','Louisiana'],['ME','Maine'],['MD','Maryland'],
-    ['MA','Massachusetts'],['MI','Michigan'],['MN','Minnesota'],['MS','Mississippi'],['MO','Missouri'],
-    ['MT','Montana'],['NE','Nebraska'],['NV','Nevada'],['NH','New Hampshire'],['NJ','New Jersey'],
-    ['NM','New Mexico'],['NY','New York'],['NC','North Carolina'],['ND','North Dakota'],['OH','Ohio'],
-    ['OK','Oklahoma'],['OR','Oregon'],['PA','Pennsylvania'],['RI','Rhode Island'],['SC','South Carolina'],
-    ['SD','South Dakota'],['TN','Tennessee'],['TX','Texas'],['UT','Utah'],['VT','Vermont'],
-    ['VA','Virginia'],['WA','Washington'],['WV','West Virginia'],['WI','Wisconsin'],['WY','Wyoming']
-  ];
   function fmt(n){return '$'+n.toLocaleString('en-US');}
-  function populate(sel){STATES.forEach(function(s){var o=document.createElement('option');o.value=s[0];o.textContent=s[1];sel.appendChild(o);});}
   function wire(type){
-    var sel=document.getElementById('hc-'+type+'-state');
+    var inp=document.getElementById('hc-'+type+'-zip');
+    var det=document.getElementById('hc-'+type+'-detect');
     var res=document.getElementById('hc-'+type+'-result');
     var cta=document.getElementById('hc-'+type+'-cta');
     var data=type==='egg'?ED:SUR;
     var noun=type==='egg'?'Egg donors':'Surrogates';
-    populate(sel);
-    sel.addEventListener('change',function(){
-      var code=sel.value;
-      if(!code){res.textContent='';cta.style.display='none';return;}
+    var ctaBase=type==='egg'?'/egg-donor-pay.html':'/surrogate-pay.html';
+    inp.addEventListener('input',function(){
+      var zip=inp.value.replace(/\D/g,'').slice(0,5);
+      inp.value=zip;
+      if(zip.length<5){
+        det.textContent='';res.textContent='';cta.style.display='none';return;
+      }
+      var stateObj=window.getStateFromZip?window.getStateFromZip(zip):null;
+      if(!stateObj){
+        det.textContent='';
+        res.textContent='Zip not found — try another.';
+        cta.style.display='none';return;
+      }
+      var code=stateObj.code,name=stateObj.name;
       var range=data[code];
-      var name=STATES.find(function(s){return s[0]===code;})[1];
+      if(!range){det.textContent='';res.textContent='';cta.style.display='none';return;}
+      det.textContent='📍 '+name;
       res.textContent=noun+' in '+name+' typically earn '+fmt(range[0])+'–'+fmt(range[1]);
       cta.textContent='Apply Now — Earn Up to '+fmt(range[1])+' →';
+      cta.href=ctaBase+'?zip='+zip+'&state='+code;
       cta.dataset.maxAmount=range[1];
+      cta.dataset.state=code;
+      cta.dataset.zip=zip;
       cta.style.display='inline-flex';
+      if(typeof gtag==='function'){
+        gtag('event','hero_zip_entered',{
+          service_type:type==='egg'?'egg_donor':'surrogate',
+          zip_code:zip,
+          state:code,
+          state_name:name
+        });
+      }
     });
   }
-  wire('egg'); wire('sur');
+  wire('egg');wire('sur');
   // Tabs
   document.querySelectorAll('.hero-calc__tab').forEach(function(tab){
     tab.addEventListener('click',function(){
@@ -455,10 +461,16 @@
 })();
 function hcTrack(tab,el){
   if(typeof gtag==='function'){
-    gtag('event','homepage_calc_cta_click',{tab:tab,max_amount:parseInt(el.dataset.maxAmount||0,10)});
+    gtag('event','homepage_calc_cta_click',{
+      tab:tab,
+      max_amount:parseInt(el.dataset.maxAmount||0,10),
+      state:el.dataset.state||'',
+      zip_code:el.dataset.zip||''
+    });
   }
 }
 </script>
+<script src="/assets/zip-lookup.js"></script>
 <script src="/assets/analytics.js" defer></script>
 </body>
 </html>
