@@ -113,13 +113,17 @@ FOOTER = """<footer class="footer">
       </div>
       <div class="footer__col">
         <h4>Egg Donation</h4>
-        <a href="../egg-donor-pay.html">Compensation Calculator</a>
-        <a href="../egg-donor-application.html">Apply as Egg Donor</a>
+        <a href="../egg-donor-pay.html">Pay Calculator</a>
+        <a href="../egg-donor-requirements.html">Requirements</a>
+        <a href="../how-egg-donation-works.html">How It Works</a>
+        <a href="../egg-donor-application.html">Apply Now</a>
       </div>
       <div class="footer__col">
         <h4>Surrogacy</h4>
-        <a href="../surrogate-pay.html">Compensation Calculator</a>
-        <a href="../surrogate-application.html">Apply as Surrogate</a>
+        <a href="../surrogate-pay.html">Pay Calculator</a>
+        <a href="../surrogate-requirements.html">Requirements</a>
+        <a href="../how-surrogacy-works.html">How It Works</a>
+        <a href="../surrogate-application.html">Apply Now</a>
       </div>
     </div>
     <div class="footer__bottom">
@@ -127,7 +131,11 @@ FOOTER = """<footer class="footer">
       <div class="footer__legal">
         <a href="../privacy-policy.html">Privacy Policy</a>
         <a href="../terms-of-service.html">Terms of Service</a>
+        <a href="../disclaimer.html">Disclaimer</a>
         <a href="../methodology.html">Methodology</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../about.html">About</a>
+        <a href="../data-sources.html">Data Sources</a>
         <a href="mailto:hello@eggsurrogatepay.com">Contact</a>
       </div>
     </div>
