@@ -304,6 +304,98 @@ ul, ol { list-style: none; }
 }
 
 /* ===========================
+   Hero Mini-Calculator Widget
+   =========================== */
+.hero-calc {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: var(--radius);
+  padding: 28px 32px 24px;
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.hero-calc__tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.hero-calc__tab {
+  flex: 1;
+  padding: 10px 16px;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: rgba(255,255,255,0.75);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: inherit;
+}
+
+.hero-calc__tab.active,
+.hero-calc__tab:hover {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border-color: rgba(255,255,255,0.7);
+}
+
+.hero-calc__select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.15);
+  color: white;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='white' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 38px;
+}
+
+.hero-calc__select option {
+  background: var(--primary-dark);
+  color: white;
+}
+
+.hero-calc__result {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  margin: 14px 0 16px;
+  min-height: 1.5em;
+  line-height: 1.5;
+}
+
+.hero-calc__cta {
+  display: inline-flex;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.hero-calc__link {
+  display: block;
+  text-align: center;
+  color: rgba(255,255,255,0.75);
+  font-size: 0.9rem;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.hero-calc__link:hover {
+  color: white;
+}
+
+/* ===========================
    Cards & Features
    =========================== */
 .features {
@@ -1068,6 +1160,7 @@ textarea.form-control {
   .hero { padding: 56px 0 48px; }
   .hero__ctas { flex-direction: column; align-items: center; }
   .hero__ctas .btn { width: 100%; max-width: 320px; }
+  .hero-calc { padding: 20px 18px 18px; }
 
   /* Features */
   .features { grid-template-columns: 1fr; }

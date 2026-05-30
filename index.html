@@ -82,11 +82,31 @@
       Earn <em>$6,000 – $98,000</em>
     </h1>
     <p class="hero__subtitle">
-      Help families grow while earning significant compensation. See exactly what you could make in your state.
+      Select your state to see your personalized estimate.
     </p>
-    <div class="hero__ctas">
-      <a href="/egg-donor-pay.html" class="btn btn--secondary btn--lg">Calculate Egg Donor Pay →</a>
-      <a href="/surrogate-pay.html" class="btn btn--outline-white btn--lg">Calculate Surrogate Pay →</a>
+
+    <!-- Mini Calculator Widget -->
+    <div class="hero-calc">
+      <div class="hero-calc__tabs">
+        <button class="hero-calc__tab active" data-tab="egg">Egg Donor</button>
+        <button class="hero-calc__tab" data-tab="sur">Surrogate</button>
+      </div>
+      <div class="hero-calc__panel" id="hc-egg">
+        <select id="hc-egg-state" class="hero-calc__select" aria-label="Select your state">
+          <option value="">— Select your state —</option>
+        </select>
+        <p class="hero-calc__result" id="hc-egg-result"></p>
+        <a href="/egg-donor-application.html" class="btn btn--secondary btn--lg hero-calc__cta" id="hc-egg-cta" style="display:none;" onclick="hcTrack('egg_donor', this)">Apply Now →</a>
+        <a href="/egg-donor-pay.html" class="hero-calc__link">See full calculator →</a>
+      </div>
+      <div class="hero-calc__panel" id="hc-sur" style="display:none;">
+        <select id="hc-sur-state" class="hero-calc__select" aria-label="Select your state">
+          <option value="">— Select your state —</option>
+        </select>
+        <p class="hero-calc__result" id="hc-sur-result"></p>
+        <a href="/surrogate-application.html" class="btn btn--secondary btn--lg hero-calc__cta" id="hc-sur-cta" style="display:none;" onclick="hcTrack('surrogate', this)">Apply Now →</a>
+        <a href="/surrogate-pay.html" class="hero-calc__link">See full calculator →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -348,6 +368,91 @@
   document.getElementById('nav-toggle').addEventListener('click', function() {
     document.getElementById('nav-links').classList.toggle('open');
   });
+</script>
+<script>
+// Hero mini-calculator
+(function () {
+  // tier1Egg: CA NY MA CT NJ | tier1Sur: + DE | tier2: WA OR IL TX CO FL GA | tier3: everything else
+  // Egg: first-time, base + $1k-$2k expenses. Sur: first-time, base + $7k-$18k allowances.
+  var ED = {
+    'AL':[7000,12000],'AK':[7000,12000],'AZ':[7000,12000],'AR':[7000,12000],
+    'CA':[11000,17000],'CO':[9000,14000],'CT':[11000,17000],'DE':[7000,12000],
+    'FL':[9000,14000],'GA':[9000,14000],'HI':[7000,12000],'ID':[7000,12000],
+    'IL':[9000,14000],'IN':[7000,12000],'IA':[7000,12000],'KS':[7000,12000],
+    'KY':[7000,12000],'LA':[7000,12000],'ME':[7000,12000],'MD':[7000,12000],
+    'MA':[11000,17000],'MI':[7000,12000],'MN':[7000,12000],'MS':[7000,12000],
+    'MO':[7000,12000],'MT':[7000,12000],'NE':[7000,12000],'NV':[7000,12000],
+    'NH':[7000,12000],'NJ':[11000,17000],'NM':[7000,12000],'NY':[11000,17000],
+    'NC':[7000,12000],'ND':[7000,12000],'OH':[7000,12000],'OK':[7000,12000],
+    'OR':[9000,14000],'PA':[7000,12000],'RI':[7000,12000],'SC':[7000,12000],
+    'SD':[7000,12000],'TN':[7000,12000],'TX':[9000,14000],'UT':[7000,12000],
+    'VT':[7000,12000],'VA':[7000,12000],'WA':[9000,14000],'WV':[7000,12000],
+    'WI':[7000,12000],'WY':[7000,12000]
+  };
+  var SUR = {
+    'AL':[47000,73000],'AK':[47000,73000],'AZ':[47000,73000],'AR':[47000,73000],
+    'CA':[67000,98000],'CO':[57000,83000],'CT':[67000,98000],'DE':[67000,98000],
+    'FL':[57000,83000],'GA':[57000,83000],'HI':[47000,73000],'ID':[47000,73000],
+    'IL':[57000,83000],'IN':[47000,73000],'IA':[47000,73000],'KS':[47000,73000],
+    'KY':[47000,73000],'LA':[47000,73000],'ME':[47000,73000],'MD':[47000,73000],
+    'MA':[67000,98000],'MI':[47000,73000],'MN':[47000,73000],'MS':[47000,73000],
+    'MO':[47000,73000],'MT':[47000,73000],'NE':[47000,73000],'NV':[47000,73000],
+    'NH':[47000,73000],'NJ':[67000,98000],'NM':[47000,73000],'NY':[67000,98000],
+    'NC':[47000,73000],'ND':[47000,73000],'OH':[47000,73000],'OK':[47000,73000],
+    'OR':[57000,83000],'PA':[47000,73000],'RI':[47000,73000],'SC':[47000,73000],
+    'SD':[47000,73000],'TN':[47000,73000],'TX':[57000,83000],'UT':[47000,73000],
+    'VT':[47000,73000],'VA':[47000,73000],'WA':[57000,83000],'WV':[47000,73000],
+    'WI':[47000,73000],'WY':[47000,73000]
+  };
+  var STATES = [
+    ['AL','Alabama'],['AK','Alaska'],['AZ','Arizona'],['AR','Arkansas'],['CA','California'],
+    ['CO','Colorado'],['CT','Connecticut'],['DE','Delaware'],['FL','Florida'],['GA','Georgia'],
+    ['HI','Hawaii'],['ID','Idaho'],['IL','Illinois'],['IN','Indiana'],['IA','Iowa'],
+    ['KS','Kansas'],['KY','Kentucky'],['LA','Louisiana'],['ME','Maine'],['MD','Maryland'],
+    ['MA','Massachusetts'],['MI','Michigan'],['MN','Minnesota'],['MS','Mississippi'],['MO','Missouri'],
+    ['MT','Montana'],['NE','Nebraska'],['NV','Nevada'],['NH','New Hampshire'],['NJ','New Jersey'],
+    ['NM','New Mexico'],['NY','New York'],['NC','North Carolina'],['ND','North Dakota'],['OH','Ohio'],
+    ['OK','Oklahoma'],['OR','Oregon'],['PA','Pennsylvania'],['RI','Rhode Island'],['SC','South Carolina'],
+    ['SD','South Dakota'],['TN','Tennessee'],['TX','Texas'],['UT','Utah'],['VT','Vermont'],
+    ['VA','Virginia'],['WA','Washington'],['WV','West Virginia'],['WI','Wisconsin'],['WY','Wyoming']
+  ];
+  function fmt(n){return '$'+n.toLocaleString('en-US');}
+  function populate(sel){STATES.forEach(function(s){var o=document.createElement('option');o.value=s[0];o.textContent=s[1];sel.appendChild(o);});}
+  function wire(type){
+    var sel=document.getElementById('hc-'+type+'-state');
+    var res=document.getElementById('hc-'+type+'-result');
+    var cta=document.getElementById('hc-'+type+'-cta');
+    var data=type==='egg'?ED:SUR;
+    var noun=type==='egg'?'Egg donors':'Surrogates';
+    populate(sel);
+    sel.addEventListener('change',function(){
+      var code=sel.value;
+      if(!code){res.textContent='';cta.style.display='none';return;}
+      var range=data[code];
+      var name=STATES.find(function(s){return s[0]===code;})[1];
+      res.textContent=noun+' in '+name+' typically earn '+fmt(range[0])+'–'+fmt(range[1]);
+      cta.textContent='Apply Now — Earn Up to '+fmt(range[1])+' →';
+      cta.dataset.maxAmount=range[1];
+      cta.style.display='inline-flex';
+    });
+  }
+  wire('egg'); wire('sur');
+  // Tabs
+  document.querySelectorAll('.hero-calc__tab').forEach(function(tab){
+    tab.addEventListener('click',function(){
+      document.querySelectorAll('.hero-calc__tab').forEach(function(t){t.classList.remove('active');});
+      tab.classList.add('active');
+      var t=tab.dataset.tab;
+      document.getElementById('hc-egg').style.display=t==='egg'?'':'none';
+      document.getElementById('hc-sur').style.display=t==='sur'?'':'none';
+    });
+  });
+})();
+function hcTrack(tab,el){
+  if(typeof gtag==='function'){
+    gtag('event','homepage_calc_cta_click',{tab:tab,max_amount:parseInt(el.dataset.maxAmount||0,10)});
+  }
+}
 </script>
 
 </body>
