@@ -4,7 +4,7 @@
   <meta name="google-site-verification" content="UfWLTOONO2Hgf2sn2KxAPnz8oLSFBggZbrcoMTgCsAE">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>You're All Set | EggSurrogatePay.com</title>
+  <title>You're on the List | EggSurrogatePay.com</title>
   <meta name="robots" content="noindex">
   <link rel="stylesheet" href="/assets/styles.css">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RR00CQ3CMS"></script>
@@ -14,7 +14,7 @@
     if (window.location.hostname === 'eggsurrogatepay.com') {
       gtag('js', new Date());
       gtag('config', 'G-RR00CQ3CMS');
-      gtag('event', 'thank_you_viewed');
+      gtag('event', 'list_signup_complete');
     }
   </script>
   <style>
@@ -53,57 +53,36 @@
       font-weight: 800;
       color: var(--primary);
       margin-bottom: 16px;
-      text-align: center;
-    }
-    .thankyou__tips {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .thankyou__tips li {
-      font-size: 0.9rem;
-      color: var(--text-light);
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-    }
-    .thankyou__tips li span {
-      color: var(--primary);
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-    .email-notice {
-      background: rgba(45,95,93,0.08);
-      border-left: 3px solid var(--primary);
-      border-radius: 6px;
-      padding: 14px 18px;
-      font-size: 0.9rem;
-      color: var(--text-light);
-      margin-bottom: 28px;
-      text-align: left;
     }
     .steps-list {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 16px;
       text-align: left;
-      margin-bottom: 24px;
     }
     .step-item {
       display: flex;
-      gap: 16px;
+      gap: 14px;
       align-items: flex-start;
     }
-    .step-item__icon {
-      font-size: 1.4rem;
+    .step-item__num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.85rem;
       flex-shrink: 0;
-      margin-top: 2px;
+      margin-top: 1px;
     }
     .step-item__title {
       font-weight: 700;
       color: var(--text);
-      margin-bottom: 4px;
+      margin-bottom: 3px;
       font-size: 0.95rem;
     }
     .step-item__text {
@@ -126,7 +105,6 @@
 </head>
 <body>
 
-<!-- Navigation -->
 <nav class="nav">
   <div class="container">
     <div class="nav__inner">
@@ -146,88 +124,34 @@
   <div class="container">
     <div class="thankyou">
 
-      <div class="thankyou__icon">✅</div>
-      <h1 class="thankyou__title">You're all set!</h1>
+      <div class="thankyou__icon">&#10003;</div>
+      <h1 class="thankyou__title" id="thankyou-title">You're on the list.</h1>
       <p class="thankyou__subtitle" id="thankyou-subtitle">
-        Your application has been received. Here's what to expect next.
+        We'll reach out when licensed agencies in your area are actively recruiting. In the meantime, use our calculators to understand exactly what you could earn.
       </p>
 
-      <div class="email-notice">
-        📧 Check your inbox for a confirmation email. If you don't see it within a few minutes, check your spam folder.
-      </div>
-
-      <!-- Egg donor timeline (shown by default, hidden for surrogates) -->
-      <div class="thankyou__card" id="timeline-egg-donor">
-        <h2>If you applied as an egg donor</h2>
+      <div class="thankyou__card">
+        <h2>What happens next</h2>
         <div class="steps-list">
           <div class="step-item">
-            <div class="step-item__icon">📧</div>
+            <div class="step-item__num">1</div>
             <div>
-              <div class="step-item__title">Within 48 hours</div>
-              <p class="step-item__text">Partner agencies receive and review your application. You may get initial outreach by email.</p>
+              <div class="step-item__title">We build our agency network</div>
+              <p class="step-item__text">We're establishing partnerships with licensed egg donation and surrogacy agencies across the US. This takes time to do right.</p>
             </div>
           </div>
           <div class="step-item">
-            <div class="step-item__icon">📞</div>
+            <div class="step-item__num">2</div>
             <div>
-              <div class="step-item__title">Within 1 week</div>
-              <p class="step-item__text">Qualified applicants are contacted for a phone screening to discuss your goals and timeline.</p>
+              <div class="step-item__title">We match by state and profile</div>
+              <p class="step-item__text">When agencies in your state are actively recruiting, we'll email everyone on our list who matches their criteria.</p>
             </div>
           </div>
           <div class="step-item">
-            <div class="step-item__icon">🏥</div>
+            <div class="step-item__num">3</div>
             <div>
-              <div class="step-item__title">Within 2–4 weeks</div>
-              <p class="step-item__text">If accepted, you'll complete a medical and psychological evaluation — fully covered by the agency.</p>
-            </div>
-          </div>
-          <div class="step-item">
-            <div class="step-item__icon">💰</div>
-            <div>
-              <div class="step-item__title">Timeline to first compensation</div>
-              <p class="step-item__text">Egg donors typically begin earning within 3–6 months of starting the process.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Surrogate timeline (hidden by default, shown for surrogates) -->
-      <div class="thankyou__card" id="timeline-surrogate" style="display:none;">
-        <h2>If you applied as a surrogate</h2>
-        <div class="steps-list">
-          <div class="step-item">
-            <div class="step-item__icon">📧</div>
-            <div>
-              <div class="step-item__title">Within 48 hours</div>
-              <p class="step-item__text">Partner agencies receive and review your application. You may get initial outreach by email.</p>
-            </div>
-          </div>
-          <div class="step-item">
-            <div class="step-item__icon">📞</div>
-            <div>
-              <div class="step-item__title">Within 1 week</div>
-              <p class="step-item__text">Qualified applicants are contacted for a phone screening to discuss your goals and surrogacy timeline.</p>
-            </div>
-          </div>
-          <div class="step-item">
-            <div class="step-item__icon">🏥</div>
-            <div>
-              <div class="step-item__title">Within 2–4 weeks</div>
-              <p class="step-item__text">If accepted, you'll complete medical and psychological evaluations — all costs are covered by the intended parents.</p>
-            </div>
-          </div>
-          <div class="step-item">
-            <div class="step-item__icon">⚖️</div>
-            <div>
-              <div class="step-item__title">Legal agreements (2–3 months)</div>
-              <p class="step-item__text">An attorney (paid by the intended parents) will review and finalize your surrogacy contract.</p>
-            </div>
-          </div>
-          <div class="step-item">
-            <div class="step-item__icon">💰</div>
-            <div>
-              <div class="step-item__title">Timeline to first compensation</div>
-              <p class="step-item__text">Surrogates typically begin receiving compensation within 18–24 months of starting the process. Monthly payments begin after embryo transfer.</p>
+              <div class="step-item__title">You decide if it's the right fit</div>
+              <p class="step-item__text">No pressure, no commitment. When we reach out, you'll have everything you need to decide whether to move forward with a specific agency.</p>
             </div>
           </div>
         </div>
@@ -235,20 +159,11 @@
 
       <hr class="thankyou__divider">
 
-      <!-- Tips while you wait -->
-      <div class="thankyou__card">
-        <h2>💡 Tips while you wait</h2>
-        <ul class="thankyou__tips">
-          <li><span>✓</span> Add <strong>hello@eggsurrogatepay.com</strong> to your contacts so our emails don't go to spam</li>
-          <li><span>✓</span> If you applied, keep your phone available — agencies sometimes call from unknown numbers</li>
-          <li><span>✓</span> Use our calculators to understand exactly what you could earn in your state</li>
-        </ul>
-      </div>
+      <p style="font-size:1rem; font-weight:600; color:var(--text); margin-bottom:16px;">Use this time to understand what you'd earn</p>
 
-      <!-- CTAs -->
-      <div class="btn-group" style="justify-content:center; margin-top: 32px;">
-        <a href="/egg-donor-pay.html" class="btn btn--primary">Egg Donor Pay Calculator</a>
-        <a href="/surrogate-pay.html" class="btn btn--outline">Surrogate Pay Calculator</a>
+      <div class="btn-group" style="justify-content:center;">
+        <a href="/egg-donor-pay.html" class="btn btn--primary" id="cta-egg">Egg Donor Pay Calculator</a>
+        <a href="/surrogate-pay.html" class="btn btn--outline" id="cta-sur">Surrogate Pay Calculator</a>
       </div>
 
       <p class="thankyou__footer-note">
@@ -259,27 +174,24 @@
   </div>
 </section>
 
-<!-- Footer -->
 <footer class="footer">
   <div class="container">
     <div class="footer__inner">
       <div>
         <div class="footer__brand">EggSurrogate<span>Pay</span></div>
-        <p class="footer__desc">Free compensation calculators and application platform for egg donors and surrogates.</p>
+        <p class="footer__desc">Free compensation calculators for egg donors and surrogates.</p>
       </div>
       <div class="footer__col">
         <h4>Egg Donation</h4>
         <a href="/egg-donor-pay.html">Compensation Calculator</a>
         <a href="/egg-donor-requirements.html">Requirements</a>
         <a href="/how-egg-donation-works.html">How It Works</a>
-        <a href="/egg-donor-application.html">Apply Now</a>
       </div>
       <div class="footer__col">
         <h4>Surrogacy</h4>
         <a href="/surrogate-pay.html">Compensation Calculator</a>
         <a href="/surrogate-requirements.html">Requirements</a>
         <a href="/how-surrogacy-works.html">How It Works</a>
-        <a href="/surrogate-application.html">Apply Now</a>
       </div>
     </div>
     <div class="footer__bottom">
@@ -287,10 +199,7 @@
       <div class="footer__legal">
         <a href="/privacy-policy.html">Privacy Policy</a>
         <a href="/terms-of-service.html">Terms of Service</a>
-        <a href="/disclaimer.html">Disclaimer</a>
-        <a href="/methodology.html">Methodology</a>
         <a href="/faq.html">FAQ</a>
-        <a href="/about.html">About</a>
       </div>
     </div>
   </div>
@@ -301,17 +210,19 @@
     document.getElementById('nav-links').classList.toggle('open');
   });
 
-  // Show surrogate-specific timeline if redirected from surrogate form
+  // Personalize based on list type
   (function() {
     var params = new URLSearchParams(window.location.search);
     var type = params.get('type');
-    if (type === 'surrogate') {
-      var eggCard = document.getElementById('timeline-egg-donor');
-      var surCard = document.getElementById('timeline-surrogate');
-      var subtitle = document.getElementById('thankyou-subtitle');
-      if (eggCard) eggCard.style.display = 'none';
-      if (surCard) surCard.style.display = 'block';
-      if (subtitle) subtitle.textContent = 'Your surrogate application has been received. Here\'s what to expect next.';
+    var title = document.getElementById('thankyou-title');
+    var subtitle = document.getElementById('thankyou-subtitle');
+    var ctaEgg = document.getElementById('cta-egg');
+    var ctaSur = document.getElementById('cta-sur');
+
+    if (type === 'surrogate_list') {
+      if (subtitle) subtitle.textContent = "We'll reach out when licensed surrogacy agencies in your area are actively recruiting. In the meantime, use our calculator to understand exactly what you could earn.";
+      if (ctaSur) { ctaSur.className = 'btn btn--primary'; }
+      if (ctaEgg) { ctaEgg.className = 'btn btn--outline'; }
     }
   })();
 </script>
