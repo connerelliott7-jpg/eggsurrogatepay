@@ -11,9 +11,11 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-RR00CQ3CMS');
-    gtag('event', 'thank_you_viewed');
+    if (window.location.hostname === 'eggsurrogatepay.com') {
+      gtag('js', new Date());
+      gtag('config', 'G-RR00CQ3CMS');
+      gtag('event', 'thank_you_viewed');
+    }
   </script>
   <style>
     .thankyou {
