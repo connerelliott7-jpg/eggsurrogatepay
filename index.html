@@ -53,6 +53,13 @@
   "sameAs": []
 }
 </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"How much do egg donors get paid?","acceptedAnswer":{"@type":"Answer","text":"Egg donors typically earn $6,000–$19,000 per cycle depending on location, experience, and education. First-time donors in standard markets earn $6,000–$12,000. Repeat donors and those in high-demand states like California, New York, and Massachusetts can earn $11,000–$17,000 or more per cycle."}},
+  {"@type":"Question","name":"How much do surrogates make?","acceptedAnswer":{"@type":"Answer","text":"Surrogates typically earn $40,000–$98,000 total, including base compensation, monthly allowances, maternity clothing, and lost wages reimbursement. Base pay alone ranges from $40,000–$80,000 depending on state and prior surrogacy experience. High-demand states like California, New York, and Massachusetts pay at the top of the range."}},
+  {"@type":"Question","name":"What is the difference between egg donation and surrogacy?","acceptedAnswer":{"@type":"Answer","text":"Egg donation involves a 3–6 month process where you donate eggs but do not carry a pregnancy. Compensation is $6,000–$19,000. Surrogacy involves carrying a pregnancy for 18–24 months total and requires having previously given birth. Compensation is $40,000–$98,000. Surrogacy requires a longer commitment but pays significantly more."}},
+  {"@type":"Question","name":"How do I apply to become an egg donor or surrogate?","acceptedAnswer":{"@type":"Answer","text":"Submit the free 5-minute application on this site. We match you with 3–5 licensed partner agencies in your area within 48 hours. Agencies then contact you for a phone screening and handle all medical and psychological evaluations at no cost to you."}},
+  {"@type":"Question","name":"Is the application free?","acceptedAnswer":{"@type":"Answer","text":"Yes, applying is completely free. There are no fees ever for egg donors or surrogates. All medical screening, psychological evaluations, and legal costs are covered by the agency and intended parents — not by you."}}
+]}</script>
 </head>
 <body>
 
@@ -96,16 +103,14 @@
           <option value="">— Select your state —</option>
         </select>
         <p class="hero-calc__result" id="hc-egg-result"></p>
-        <a href="/egg-donor-application.html" class="btn btn--secondary btn--lg hero-calc__cta" id="hc-egg-cta" style="display:none;" onclick="hcTrack('egg_donor', this)">Apply Now →</a>
-        <a href="/egg-donor-pay.html" class="hero-calc__link">See full calculator →</a>
+        <a href="/egg-donor-pay.html" class="btn btn--secondary btn--lg hero-calc__cta" id="hc-egg-cta" style="display:none;" onclick="hcTrack('egg_donor', this)">Get Full Estimate →</a>
       </div>
       <div class="hero-calc__panel" id="hc-sur" style="display:none;">
         <select id="hc-sur-state" class="hero-calc__select" aria-label="Select your state">
           <option value="">— Select your state —</option>
         </select>
         <p class="hero-calc__result" id="hc-sur-result"></p>
-        <a href="/surrogate-application.html" class="btn btn--secondary btn--lg hero-calc__cta" id="hc-sur-cta" style="display:none;" onclick="hcTrack('surrogate', this)">Apply Now →</a>
-        <a href="/surrogate-pay.html" class="hero-calc__link">See full calculator →</a>
+        <a href="/surrogate-pay.html" class="btn btn--secondary btn--lg hero-calc__cta" id="hc-sur-cta" style="display:none;" onclick="hcTrack('surrogate', this)">Get Full Estimate →</a>
       </div>
     </div>
   </div>
@@ -454,6 +459,6 @@ function hcTrack(tab,el){
   }
 }
 </script>
-
+<script src="/assets/analytics.js" defer></script>
 </body>
 </html>

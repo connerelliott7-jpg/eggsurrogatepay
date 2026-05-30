@@ -182,6 +182,10 @@ function initEggDonorCalc(form) {
         tier: tier,
         experience: expValue
       });
+      gtag('event', 'calculator_complete', {
+        event_category: 'engagement',
+        page_path: window.location.pathname
+      });
     }
   });
 }
@@ -307,6 +311,10 @@ function initSurrogateCalc(form) {
         state: stateCode || 'unknown',
         tier: tier,
         experience: expValue
+      });
+      gtag('event', 'calculator_complete', {
+        event_category: 'engagement',
+        page_path: window.location.pathname
       });
     }
   });
