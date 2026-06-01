@@ -1,0 +1,24 @@
+# www → non-www
+https://www.eggsurrogatepay.com/* https://eggsurrogatepay.com/:splat 301
+
+# Strip .html extension — guides
+/guides/*.html /guides/:splat 301
+
+# Strip .html extension — root pages
+/egg-donor-pay.html /egg-donor-pay 301
+/surrogate-pay.html /surrogate-pay 301
+/egg-donor-application.html /egg-donor-application 301
+/surrogate-application.html /surrogate-application 301
+/egg-donor-requirements.html /egg-donor-requirements 301
+/surrogate-requirements.html /surrogate-requirements 301
+/how-egg-donation-works.html /how-egg-donation-works 301
+/how-surrogacy-works.html /how-surrogacy-works 301
+/faq.html /faq 301
+/about.html /about 301
+/disclaimer.html /disclaimer 301
+/methodology.html /methodology 301
+/data-sources.html /data-sources 301
+/privacy-policy.html /privacy-policy 301
+/terms-of-service.html /terms-of-service 301
+/advertise.html /advertise 301
+/thank-you.html /thank-you 301
