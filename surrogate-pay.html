@@ -308,6 +308,79 @@
   </div>
 </section>
 
+<!-- State Directory -->
+<section class="section section--alt">
+  <div class="container container--narrow">
+    <div class="text-center mb-8">
+      <span class="badge">Browse by State</span>
+      <h2 class="section__title">Surrogate Pay by State</h2>
+      <p class="section__subtitle">Enter your zip code to jump to your state's pay guide</p>
+    </div>
+    <div style="max-width:440px; margin:0 auto 28px;">
+      <div style="display:flex; gap:8px;">
+        <input type="tel" id="sd-sur-zip" class="form-control" placeholder="Enter your zip code" maxlength="5" inputmode="numeric" autocomplete="postal-code" style="flex:1;">
+        <button class="btn btn--primary" id="sd-sur-btn" disabled style="white-space:nowrap;">Go →</button>
+      </div>
+      <div id="sd-sur-detect" style="margin-top:8px; font-size:0.9rem; color:var(--primary); font-weight:600; min-height:20px;"></div>
+    </div>
+    <details style="text-align:center;">
+      <summary style="cursor:pointer; color:var(--primary); font-size:0.9rem; font-weight:600; list-style:none; display:inline-flex; align-items:center; gap:6px; padding:8px 16px; border:1px solid var(--border); border-radius:var(--radius-sm); background:white;">Browse all 50 states ▼</summary>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(160px,1fr)); gap:10px; margin-top:16px; text-align:left;">
+        <a href="guides/surrogate-pay-alabama.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Alabama</a>
+        <a href="guides/surrogate-pay-alaska.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Alaska</a>
+        <a href="guides/surrogate-pay-arizona.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Arizona</a>
+        <a href="guides/surrogate-pay-arkansas.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Arkansas</a>
+        <a href="guides/surrogate-pay-california.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">California</a>
+        <a href="guides/surrogate-pay-colorado.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Colorado</a>
+        <a href="guides/surrogate-pay-connecticut.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Connecticut</a>
+        <a href="guides/surrogate-pay-delaware.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Delaware</a>
+        <a href="guides/surrogate-pay-florida.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Florida</a>
+        <a href="guides/surrogate-pay-georgia.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Georgia</a>
+        <a href="guides/surrogate-pay-hawaii.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Hawaii</a>
+        <a href="guides/surrogate-pay-idaho.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Idaho</a>
+        <a href="guides/surrogate-pay-illinois.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Illinois</a>
+        <a href="guides/surrogate-pay-indiana.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Indiana</a>
+        <a href="guides/surrogate-pay-iowa.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Iowa</a>
+        <a href="guides/surrogate-pay-kansas.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Kansas</a>
+        <a href="guides/surrogate-pay-kentucky.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Kentucky</a>
+        <a href="guides/surrogate-pay-louisiana.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Louisiana</a>
+        <a href="guides/surrogate-pay-maine.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Maine</a>
+        <a href="guides/surrogate-pay-maryland.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Maryland</a>
+        <a href="guides/surrogate-pay-massachusetts.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Massachusetts</a>
+        <a href="guides/surrogate-pay-michigan.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Michigan</a>
+        <a href="guides/surrogate-pay-minnesota.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Minnesota</a>
+        <a href="guides/surrogate-pay-mississippi.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Mississippi</a>
+        <a href="guides/surrogate-pay-missouri.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Missouri</a>
+        <a href="guides/surrogate-pay-montana.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Montana</a>
+        <a href="guides/surrogate-pay-nebraska.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Nebraska</a>
+        <a href="guides/surrogate-pay-nevada.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Nevada</a>
+        <a href="guides/surrogate-pay-new-hampshire.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">New Hampshire</a>
+        <a href="guides/surrogate-pay-new-jersey.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">New Jersey</a>
+        <a href="guides/surrogate-pay-new-mexico.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">New Mexico</a>
+        <a href="guides/surrogate-pay-new-york.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">New York</a>
+        <a href="guides/surrogate-pay-north-carolina.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">North Carolina</a>
+        <a href="guides/surrogate-pay-north-dakota.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">North Dakota</a>
+        <a href="guides/surrogate-pay-ohio.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Ohio</a>
+        <a href="guides/surrogate-pay-oklahoma.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Oklahoma</a>
+        <a href="guides/surrogate-pay-oregon.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Oregon</a>
+        <a href="guides/surrogate-pay-pennsylvania.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Pennsylvania</a>
+        <a href="guides/surrogate-pay-rhode-island.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Rhode Island</a>
+        <a href="guides/surrogate-pay-south-carolina.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">South Carolina</a>
+        <a href="guides/surrogate-pay-south-dakota.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">South Dakota</a>
+        <a href="guides/surrogate-pay-tennessee.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Tennessee</a>
+        <a href="guides/surrogate-pay-texas.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Texas</a>
+        <a href="guides/surrogate-pay-utah.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Utah</a>
+        <a href="guides/surrogate-pay-vermont.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Vermont</a>
+        <a href="guides/surrogate-pay-virginia.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Virginia</a>
+        <a href="guides/surrogate-pay-washington.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Washington</a>
+        <a href="guides/surrogate-pay-west-virginia.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">West Virginia</a>
+        <a href="guides/surrogate-pay-wisconsin.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Wisconsin</a>
+        <a href="guides/surrogate-pay-wyoming.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Wyoming</a>
+      </div>
+    </details>
+  </div>
+</section>
+
 <!-- Footer -->
 <footer class="footer">
   <div class="container">
@@ -376,82 +449,6 @@
   })();
 </script>
 
-<!-- State Directory -->
-<section class="section section--alt">
-  <div class="container container--narrow">
-    <div class="text-center mb-8">
-      <span class="badge">Browse by State</span>
-      <h2 class="section__title">Surrogate Pay by State</h2>
-      <p class="section__subtitle">Enter your zip code to jump to your state's pay guide</p>
-    </div>
-
-    <!-- Zip search -->
-    <div style="max-width:440px; margin:0 auto 28px;">
-      <div style="display:flex; gap:8px;">
-        <input type="tel" id="sd-sur-zip" class="form-control" placeholder="Enter your zip code" maxlength="5" inputmode="numeric" autocomplete="postal-code" style="flex:1;">
-        <button class="btn btn--primary" id="sd-sur-btn" disabled style="white-space:nowrap;">Go →</button>
-      </div>
-      <div id="sd-sur-detect" style="margin-top:8px; font-size:0.9rem; color:var(--primary); font-weight:600; min-height:20px;"></div>
-    </div>
-
-    <!-- Browse all (collapsed by default — SEO links stay in DOM) -->
-    <details style="text-align:center;">
-      <summary style="cursor:pointer; color:var(--primary); font-size:0.9rem; font-weight:600; list-style:none; display:inline-flex; align-items:center; gap:6px; padding:8px 16px; border:1px solid var(--border); border-radius:var(--radius-sm); background:white;">Browse all 50 states ▼</summary>
-      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(160px,1fr)); gap:10px; margin-top:16px; text-align:left;">
-        <a href="guides/surrogate-pay-alabama.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Alabama</a>
-        <a href="guides/surrogate-pay-alaska.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Alaska</a>
-        <a href="guides/surrogate-pay-arizona.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Arizona</a>
-        <a href="guides/surrogate-pay-arkansas.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Arkansas</a>
-        <a href="guides/surrogate-pay-california.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">California</a>
-        <a href="guides/surrogate-pay-colorado.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Colorado</a>
-        <a href="guides/surrogate-pay-connecticut.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Connecticut</a>
-        <a href="guides/surrogate-pay-delaware.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Delaware</a>
-        <a href="guides/surrogate-pay-florida.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Florida</a>
-        <a href="guides/surrogate-pay-georgia.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Georgia</a>
-        <a href="guides/surrogate-pay-hawaii.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Hawaii</a>
-        <a href="guides/surrogate-pay-idaho.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Idaho</a>
-        <a href="guides/surrogate-pay-illinois.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Illinois</a>
-        <a href="guides/surrogate-pay-indiana.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Indiana</a>
-        <a href="guides/surrogate-pay-iowa.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Iowa</a>
-        <a href="guides/surrogate-pay-kansas.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Kansas</a>
-        <a href="guides/surrogate-pay-kentucky.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Kentucky</a>
-        <a href="guides/surrogate-pay-louisiana.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Louisiana</a>
-        <a href="guides/surrogate-pay-maine.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Maine</a>
-        <a href="guides/surrogate-pay-maryland.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Maryland</a>
-        <a href="guides/surrogate-pay-massachusetts.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Massachusetts</a>
-        <a href="guides/surrogate-pay-michigan.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Michigan</a>
-        <a href="guides/surrogate-pay-minnesota.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Minnesota</a>
-        <a href="guides/surrogate-pay-mississippi.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Mississippi</a>
-        <a href="guides/surrogate-pay-missouri.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Missouri</a>
-        <a href="guides/surrogate-pay-montana.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Montana</a>
-        <a href="guides/surrogate-pay-nebraska.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Nebraska</a>
-        <a href="guides/surrogate-pay-nevada.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Nevada</a>
-        <a href="guides/surrogate-pay-new-hampshire.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">New Hampshire</a>
-        <a href="guides/surrogate-pay-new-jersey.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">New Jersey</a>
-        <a href="guides/surrogate-pay-new-mexico.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">New Mexico</a>
-        <a href="guides/surrogate-pay-new-york.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">New York</a>
-        <a href="guides/surrogate-pay-north-carolina.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">North Carolina</a>
-        <a href="guides/surrogate-pay-north-dakota.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">North Dakota</a>
-        <a href="guides/surrogate-pay-ohio.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Ohio</a>
-        <a href="guides/surrogate-pay-oklahoma.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Oklahoma</a>
-        <a href="guides/surrogate-pay-oregon.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Oregon</a>
-        <a href="guides/surrogate-pay-pennsylvania.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Pennsylvania</a>
-        <a href="guides/surrogate-pay-rhode-island.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Rhode Island</a>
-        <a href="guides/surrogate-pay-south-carolina.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">South Carolina</a>
-        <a href="guides/surrogate-pay-south-dakota.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">South Dakota</a>
-        <a href="guides/surrogate-pay-tennessee.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Tennessee</a>
-        <a href="guides/surrogate-pay-texas.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Texas</a>
-        <a href="guides/surrogate-pay-utah.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Utah</a>
-        <a href="guides/surrogate-pay-vermont.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Vermont</a>
-        <a href="guides/surrogate-pay-virginia.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Virginia</a>
-        <a href="guides/surrogate-pay-washington.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Washington</a>
-        <a href="guides/surrogate-pay-west-virginia.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">West Virginia</a>
-        <a href="guides/surrogate-pay-wisconsin.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Wisconsin</a>
-        <a href="guides/surrogate-pay-wyoming.html" style="display:block; padding:10px 14px; background:white; border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:500;">Wyoming</a>
-      </div>
-    </details>
-  </div>
-</section>
 <script src="/assets/zip-lookup.js"></script>
 <script>
 (function(){
