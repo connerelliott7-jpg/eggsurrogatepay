@@ -18,7 +18,11 @@ INDEXNOW_ENDPOINT = "https://api.indexnow.org/indexnow"
 
 def get_urls_from_sitemap():
     print(f"Fetching sitemap: {SITEMAP_URL}")
-    with urllib.request.urlopen(SITEMAP_URL, timeout=10) as resp:
+    req = urllib.request.Request(
+        SITEMAP_URL,
+        headers={"User-Agent": "IndexNow-Submitter/1.0"},
+    )
+    with urllib.request.urlopen(req, timeout=10) as resp:
         content = resp.read()
     root = ET.fromstring(content)
     ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
