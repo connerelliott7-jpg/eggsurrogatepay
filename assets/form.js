@@ -104,23 +104,76 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // ---- Form submit ----
+  // ---- Form submit (AJAX) ----
   const submitBtn = document.getElementById('submit-btn');
   if (submitBtn) {
     submitBtn.addEventListener('click', function (e) {
       e.preventDefault();
       if (!validateStep(totalSteps)) return;
       calculateHiddenFields();
+
       var stateVal = (document.getElementById('form-state') || {}).value || '';
       var serviceVal = multiForm.dataset.serviceType || '';
-      // Append state + service to _next so it survives the Formspree redirect
-      var nextInput = multiForm.querySelector('input[name="_next"]');
-      if (nextInput && stateVal) {
-        var base = nextInput.value.split('?')[0];
-        nextInput.value = base + '?state=' + encodeURIComponent(stateVal) + '&service=' + encodeURIComponent(serviceVal);
-      }
-      multiForm.submit();
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting…';
+
+      var formData = new FormData(multiForm);
+
+      fetch(multiForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function(res) {
+        if (res.ok) {
+          // Show inline success state
+          var section = multiForm.closest('section') || multiForm.parentElement;
+          var container = section.querySelector('.container') || section;
+          container.innerHTML = [
+            '<div style="max-width:560px;margin:0 auto;text-align:center;padding:48px 16px 80px;">',
+            '  <div style="width:72px;height:72px;border-radius:50%;background:var(--bg-accent);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:2rem;">✓</div>',
+            '  <h1 style="font-size:clamp(1.6rem,4vw,2.2rem);font-weight:800;color:var(--primary);margin-bottom:16px;">You\'re on the list!</h1>',
+            '  <p style="font-size:1.05rem;color:var(--text-light);line-height:1.7;margin-bottom:12px;">We\'ve got your information and we\'re glad you applied.</p>',
+            '  <p style="font-size:0.95rem;color:var(--text-light);line-height:1.7;margin-bottom:12px;">We\'re building our agency network now. We\'ll reach out as opportunities become available in your area.</p>',
+            stateVal ? compRangeHTML(stateVal, serviceVal) : '',
+            '  <a href="/" style="display:inline-block;margin-top:28px;font-size:0.9rem;color:var(--primary);font-weight:600;text-decoration:none;">← Back to EggSurrogatePay</a>',
+            '</div>'
+          ].join('');
+
+          if (typeof gtag === 'function') {
+            gtag('event', 'application_submitted', { service_type: serviceVal });
+          }
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          throw new Error('Server error');
+        }
+      })
+      .catch(function() {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit My Application →';
+        alert('Something went wrong. Please try again or email us at hello@eggsurrogatepay.com');
+      });
     });
+  }
+
+  function compRangeHTML(state, service) {
+    var EGG = { CA:[8000,15000],NY:[8000,14000],MA:[7500,13000],CT:[7000,12000],NJ:[7000,12000],IL:[7000,12000],WA:[7000,12000],MD:[6500,11000],DC:[7000,12000],CO:[6500,11000],HI:[6500,11000],TX:[6000,10000],FL:[6000,10000],GA:[6000,10000],VA:[6000,10000],PA:[6000,10000],OR:[6000,10000],AZ:[6000,10000],NV:[6000,10000],MN:[5500,9000],OH:[5500,9000],MI:[5500,9000],NC:[5500,9000],TN:[5500,9000],WI:[5500,9000],MO:[5500,9000],IN:[5500,9000] };
+    var SUR = { CA:[45000,65000],NY:[45000,60000],CT:[42000,58000],NJ:[42000,58000],IL:[40000,55000],WA:[40000,55000],CO:[38000,52000],TX:[35000,50000],FL:[35000,50000],GA:[35000,48000],OR:[35000,48000],NV:[35000,48000],PA:[33000,47000],VA:[33000,47000],NC:[30000,43000],OH:[30000,43000],MI:[30000,43000],MN:[30000,43000] };
+    var NAMES = { AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',DC:'Washington D.C.',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming' };
+    var map = service === 'surrogate' ? SUR : EGG;
+    var def = service === 'surrogate' ? [28000,42000] : [5000,8000];
+    var r = map[state] || def;
+    var label = service === 'surrogate' ? 'per pregnancy' : 'per cycle';
+    var name = NAMES[state] || 'your area';
+    function fmt(n) { return '$' + n.toLocaleString(); }
+    return [
+      '<div style="background:var(--bg-accent);border:1px solid rgba(45,95,93,0.2);border-radius:12px;padding:24px;margin:24px 0;text-align:left;">',
+      '  <p style="font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.07em;color:var(--primary);margin:0 0 8px;">Estimated range for ' + name + '</p>',
+      '  <p style="font-size:1.9rem;font-weight:800;color:var(--text);margin:0 0 4px;">' + fmt(r[0]) + ' – ' + fmt(r[1]) + ' <span style="font-size:1rem;font-weight:500;color:var(--text-light);">' + label + '</span></p>',
+      '  <p style="font-size:0.82rem;color:var(--text-light);margin:0;">First-time applicants. Actual compensation set by your matched agency.</p>',
+      '</div>'
+    ].join('');
   }
 
   // ---- Validation ----
