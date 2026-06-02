@@ -104,6 +104,15 @@ function initEggDonorCalc(form) {
     const tier = stateCode ? getStateTier(stateCode, 'egg_donor') : 'tier3';
     const expValue = experience.value;
 
+    // Save inputs so the application form can pre-fill
+    try {
+      localStorage.setItem('esp_egg_prefill', JSON.stringify({
+        zip: zip, state: stateCode || '', stateName: stateName,
+        education: education, experience: expValue,
+        age: document.getElementById('ed-age').value
+      }));
+    } catch(e) {}
+
     // Base compensation by tier
     let baseMin, baseMax;
     if (expValue === 'first') {

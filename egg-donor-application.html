@@ -370,5 +370,41 @@
 </script>
 <script src="/assets/zip-lookup.js"></script>
 <script src="/assets/form.js"></script>
+<script>
+// Pre-fill from calculator if available
+(function() {
+  var raw = localStorage.getItem('esp_egg_prefill');
+  if (!raw) return;
+  try { var p = JSON.parse(raw); } catch(e) { return; }
+  if (!p) return;
+
+  var eduMap = { hs: 'high_school', some_college: 'some_college', associates: 'associates', bachelors: 'bachelors', masters: 'graduate' };
+  var expMap = { first: '0', once: '1', two_plus: '2' };
+
+  function set(id, val) { var el = document.getElementById(id); if (el && val) el.value = val; }
+
+  // Wait for zip-lookup.js to be ready before triggering state detection
+  window.addEventListener('load', function() {
+    if (p.zip) {
+      set('form-zip', p.zip);
+      // Trigger state lookup by dispatching an input event
+      var zipEl = document.getElementById('form-zip');
+      if (zipEl) zipEl.dispatchEvent(new Event('input'));
+    }
+    if (p.age) set('form-age', p.age);
+    if (p.education && eduMap[p.education]) set('education', eduMap[p.education]);
+    if (p.experience && expMap[p.experience]) set('prior_donations', expMap[p.experience]);
+
+    // Show banner if any field was pre-filled
+    if (p.zip || p.age || p.education || p.experience) {
+      var banner = document.createElement('div');
+      banner.style.cssText = 'background:var(--bg-accent);border:1px solid rgba(45,95,93,0.2);border-radius:8px;padding:10px 16px;font-size:0.82rem;color:var(--text-muted);margin-bottom:20px;display:flex;align-items:center;gap:8px;';
+      banner.innerHTML = '<span>✓</span><span>Some fields were pre-filled from your compensation estimate. Review and adjust as needed.</span>';
+      var firstStep = document.getElementById('step-1');
+      if (firstStep) firstStep.insertBefore(banner, firstStep.firstChild);
+    }
+  });
+})();
+</script>
 </body>
 </html>
