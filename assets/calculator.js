@@ -161,16 +161,24 @@ function initEggDonorCalc(form) {
         </div>
       </div>
       <div class="results-ctas">
-        <a href="/egg-donor-application.html" class="btn btn--primary" onclick="trackAppStart('egg_donor')">
-          Start Your Application →
+        <a href="/egg-donor-application.html" class="btn btn--primary btn--full" style="font-size:1.05rem;padding:16px;" onclick="trackAppStart('egg_donor')">
+          Apply Now — Earn Up to ${fmt(totalMax)} →
         </a>
-        <a href="#how-it-works" class="btn btn--outline">Learn More About the Process</a>
+        <a href="#how-it-works" class="btn btn--outline btn--full" style="margin-top:10px;">
+          Learn More About the Process
+        </a>
       </div>
-      <div class="results-disclaimer">
-        <strong>ℹ️ Compensation Disclaimer</strong>
-        This is an estimate based on average market rates. Actual compensation is determined by the agency you work with based on current demand and your qualifications. Sources: Industry surveys of 30+ agencies, 2024–2026 data.
-      </div>
+      <details class="results-disclaimer">
+        <summary style="cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px;">
+          <span>ℹ️</span><strong>Compensation Disclaimer</strong><span style="margin-left:auto;font-size:0.8rem;opacity:0.6;">tap to expand</span>
+        </summary>
+        <p style="margin:8px 0 0;font-size:0.85rem;line-height:1.55;">This is an estimate based on average market rates. Actual compensation is determined by the agency you work with based on current demand and your qualifications. Sources: Industry surveys of 30+ agencies, 2024–2026 data.</p>
+      </details>
     `;
+
+    // Hide the calculate button now that results are showing
+    var calcBtn = document.querySelector('[data-calc-btn]');
+    if (calcBtn) calcBtn.style.display = 'none';
 
     resultsEl.classList.add('show');
     resultsEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -291,16 +299,24 @@ function initSurrogateCalc(form) {
         </div>
       </div>
       <div class="results-ctas">
-        <a href="/surrogate-application.html" class="btn btn--primary" onclick="trackAppStart('surrogate')">
-          Start Your Application →
+        <a href="/surrogate-application.html" class="btn btn--primary btn--full" style="font-size:1.05rem;padding:16px;" onclick="trackAppStart('surrogate')">
+          Apply Now — Earn Up to ${fmt(totalMax)} →
         </a>
-        <a href="#how-it-works" class="btn btn--outline">Learn More About the Process</a>
+        <a href="#how-it-works" class="btn btn--outline btn--full" style="margin-top:10px;">
+          Learn More About the Process
+        </a>
       </div>
-      <div class="results-disclaimer">
-        <strong>ℹ️ Compensation Disclaimer</strong>
-        This is an estimate based on average market rates. Actual compensation is determined by the agency you work with based on current demand and your qualifications. Sources: Industry surveys of 30+ agencies, 2024–2026 data.
-      </div>
+      <details class="results-disclaimer">
+        <summary style="cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px;">
+          <span>ℹ️</span><strong>Compensation Disclaimer</strong><span style="margin-left:auto;font-size:0.8rem;opacity:0.6;">tap to expand</span>
+        </summary>
+        <p style="margin:8px 0 0;font-size:0.85rem;line-height:1.55;">This is an estimate based on average market rates. Actual compensation is determined by the agency you work with based on current demand and your qualifications. Sources: Industry surveys of 30+ agencies, 2024–2026 data.</p>
+      </details>
     `;
+
+    // Hide the calculate button now that results are showing
+    var calcBtn = document.querySelector('[data-calc-btn]');
+    if (calcBtn) calcBtn.style.display = 'none';
 
     resultsEl.classList.add('show');
     resultsEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });

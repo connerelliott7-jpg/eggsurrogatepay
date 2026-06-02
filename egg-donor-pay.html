@@ -378,23 +378,7 @@
     document.getElementById('nav-links').classList.toggle('open');
   });
 
-  // FIX: Personalize the post-calculator CTA with the computed max value.
-  // Watches for results to render, extracts the total-max from the breakdown row,
-  // then rewrites the primary CTA button text to include that figure.
-  (function () {
-    var resultsEl = document.getElementById('egg-donor-results');
-    if (!resultsEl) return;
-    var observer = new MutationObserver(function () {
-      var totalRow = resultsEl.querySelector('.results-row.total .results-row__amount');
-      var ctaBtn = resultsEl.querySelector('.results-ctas .btn--primary');
-      if (!totalRow || !ctaBtn) return;
-      // Amount text is like "$8,000 – $12,000"; extract the upper bound after " – "
-      var parts = totalRow.textContent.split('–');
-      var maxStr = parts[parts.length - 1].trim(); // e.g. "$12,000"
-      ctaBtn.textContent = 'Apply Now — Earn Up to ' + maxStr + ' →';
-    });
-    observer.observe(resultsEl, { childList: true, subtree: false });
-  })();
+  // CTA text is now set directly in calculator.js — observer no longer needed.
 </script>
 
 <script src="/assets/zip-lookup.js"></script>
