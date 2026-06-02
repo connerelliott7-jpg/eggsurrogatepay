@@ -160,15 +160,15 @@ function initEggDonorCalc(form) {
           <span>📋 Commitment: 10–15 clinic visits</span>
         </div>
       </div>
-      <div class="results-disclaimer">
-        <strong>ℹ️ Compensation Disclaimer</strong>
-        This is an estimate based on average market rates. Actual compensation is determined by the agency you work with based on current demand and your qualifications. Sources: Industry surveys of 30+ agencies, 2024–2026 data.
-      </div>
       <div class="results-ctas">
         <a href="/egg-donor-application.html" class="btn btn--primary" onclick="trackAppStart('egg_donor')">
           Start Your Application →
         </a>
         <a href="#how-it-works" class="btn btn--outline">Learn More About the Process</a>
+      </div>
+      <div class="results-disclaimer">
+        <strong>ℹ️ Compensation Disclaimer</strong>
+        This is an estimate based on average market rates. Actual compensation is determined by the agency you work with based on current demand and your qualifications. Sources: Industry surveys of 30+ agencies, 2024–2026 data.
       </div>
     `;
 
@@ -290,15 +290,15 @@ function initSurrogateCalc(form) {
           <span>📋 Commitment: Full pregnancy + 6 weeks post</span>
         </div>
       </div>
-      <div class="results-disclaimer">
-        <strong>ℹ️ Compensation Disclaimer</strong>
-        This is an estimate based on average market rates. Actual compensation is determined by the agency you work with based on current demand and your qualifications. Sources: Industry surveys of 30+ agencies, 2024–2026 data.
-      </div>
       <div class="results-ctas">
         <a href="/surrogate-application.html" class="btn btn--primary" onclick="trackAppStart('surrogate')">
           Start Your Application →
         </a>
         <a href="#how-it-works" class="btn btn--outline">Learn More About the Process</a>
+      </div>
+      <div class="results-disclaimer">
+        <strong>ℹ️ Compensation Disclaimer</strong>
+        This is an estimate based on average market rates. Actual compensation is determined by the agency you work with based on current demand and your qualifications. Sources: Industry surveys of 30+ agencies, 2024–2026 data.
       </div>
     `;
 

@@ -249,17 +249,12 @@
           </div>
 
           <div class="form-group">
-            <label>Do you currently use tobacco or nicotine products? <span class="required">*</span></label>
-            <div class="radio-group" data-radio-required="tobacco_use">
-              <label class="radio-option">
-                <input type="radio" name="tobacco_use" value="no">
-                <span>No — I don't use tobacco or nicotine</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="tobacco_use" value="yes">
-                <span>Yes — I currently use tobacco or nicotine</span>
-              </label>
-            </div>
+            <label for="tobacco_use">Do you currently use tobacco or nicotine products? <span class="required">*</span></label>
+            <select id="tobacco_use" name="tobacco_use" required>
+              <option value="">Select one</option>
+              <option value="no">No — I don't use tobacco or nicotine</option>
+              <option value="yes">Yes — I currently use tobacco or nicotine</option>
+            </select>
             <div id="tobacco_use-error" class="field-error"></div>
             <div style="font-size:0.82rem; color:var(--text-muted); margin-top:4px;">All agencies require donors to be non-smokers/non-nicotine users.</div>
           </div>
@@ -281,6 +276,7 @@
             <label for="motivation">Why do you want to become an egg donor? <span class="required">*</span></label>
             <textarea id="motivation" name="motivation" class="form-control" rows="4" maxlength="500" placeholder="Share a bit about what motivates you…" required style="resize:vertical;"></textarea>
             <div style="font-size:0.82rem; color:var(--text-muted); margin-top:4px; text-align:right;"><span id="motivation-count">0/500</span></div>
+            <div style="font-size:0.82rem; color:var(--text-muted); margin-top:6px; line-height:1.55;">Examples: "I want to help a family who can't conceive on their own." &nbsp;·&nbsp; "I've watched close friends go through IVF and want to give back." &nbsp;·&nbsp; "I'd like to use the compensation toward student loans." Any honest answer is welcome.</div>
             <div id="motivation-error" class="field-error"></div>
           </div>
 
