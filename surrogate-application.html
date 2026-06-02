@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="UfWLTOONO2Hgf2sn2KxAPnz8oLSFBggZbrcoMTgCsAE">
   <meta charset="UTF-8">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Surrogate Early Access List | EggSurrogatePay.com</title>
-  <meta name="description" content="Join the surrogate early access list. We'll reach out when licensed agencies in your area are actively recruiting surrogates.">
-  <link rel="canonical" href="https://eggsurrogatepay.com/surrogate-application">
+  <title>Surrogate Application 2026 | EggSurrogatePay.com</title>
+  <meta name="description" content="Start your surrogate application. Takes 5 minutes. We match you with licensed agencies in your area based on your profile.">
+  <link rel="canonical" href="https://eggsurrogatepay.com/surrogate-application.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/assets/styles.css">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RR00CQ3CMS"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    if (window.location.hostname === 'eggsurrogatepay.com') {
-      gtag('js', new Date());
-      gtag('config', 'G-RR00CQ3CMS');
-    }
+    gtag('js', new Date());
+    gtag('config', 'G-RR00CQ3CMS');
   </script>
 </head>
 <body>
@@ -29,9 +26,9 @@
         <span></span><span></span><span></span>
       </button>
       <div class="nav__links" id="nav-links">
-        <a href="/egg-donor-pay">Egg Donor Pay</a>
-        <a href="/surrogate-pay">Surrogate Pay</a>
-        <a href="/surrogate-application" class="btn--nav" style="background:var(--secondary);">Join List</a>
+        <a href="/egg-donor-pay.html">Egg Donor Pay</a>
+        <a href="/surrogate-pay.html">Surrogate Pay</a>
+        <a href="/surrogate-application.html" class="btn--nav">Apply Now</a>
       </div>
     </div>
   </div>
@@ -39,112 +36,370 @@
 
 <div class="page-hero">
   <div class="container">
-    <h1 class="page-hero__title">Join the Surrogate Early Access List</h1>
-    <p class="page-hero__subtitle">We're building our agency network. Leave your details and we'll reach out when licensed agencies in your area are actively recruiting surrogates.</p>
+    <h1 class="page-hero__title">Surrogate Application</h1>
+    <p class="page-hero__subtitle">5 minutes · Free · No commitment. We'll match you with licensed agencies in your area.</p>
   </div>
 </div>
 
 <section class="section">
   <div class="container container--narrow">
 
-    <div style="background:var(--bg-accent); border-left:4px solid var(--primary); border-radius:var(--radius-sm); padding:20px 24px; margin-bottom:32px; color:var(--text); line-height:1.7;">
-      <strong>How this works:</strong> We're building relationships with licensed surrogacy agencies across the US. When agencies in your area are actively recruiting, we'll contact everyone on our list whose state and profile match. No commitment required — this is just a way to stay informed.
+    <!-- Trust bar -->
+    <div style="display:flex; justify-content:center; gap:24px; flex-wrap:wrap; margin-bottom:32px;">
+      <div class="trust-item">✅ Free to apply</div>
+      <div class="trust-item">🏥 Licensed agencies only</div>
+      <div class="trust-item">🔒 Private & confidential</div>
+      <div class="trust-item">💰 No fees ever</div>
     </div>
 
-    <!-- Trust signals -->
-    <div style="margin-bottom:28px; text-align:center;">
-      <div class="trust-bar__inner" style="justify-content:center; gap:24px; flex-wrap:wrap;">
-        <div class="trust-item">Free to join</div>
-        <div class="trust-item">No commitment</div>
-        <div class="trust-item">Licensed agencies only</div>
-        <div class="trust-item">Unsubscribe anytime</div>
-      </div>
-    </div>
+    <div class="calculator" style="padding:0; overflow:hidden;">
 
-    <div class="calculator">
-      <div class="calculator__header">
-        <h2>Get on the List</h2>
-        <p>Takes under 60 seconds. We'll reach out when agencies in your area are recruiting.</p>
+      <!-- Progress bar -->
+      <div class="progress-bar">
+        <div id="progress-label" class="progress-bar__label">Step 1 of 5</div>
+        <div class="progress-bar__track">
+          <div id="progress-fill" class="progress-bar__fill" style="width:20%;"></div>
+        </div>
       </div>
-      <div class="calculator__body">
-        <form
-          action="https://formspree.io/f/mvzywadq"
-          method="POST"
-          style="display:flex; flex-direction:column; gap:20px;"
-        >
-          <input type="hidden" name="list_type" value="surrogate_early_access">
-          <input type="hidden" name="_subject" value="Surrogate Early Access List">
-          <input type="hidden" name="_next" value="https://eggsurrogatepay.com/thank-you?type=surrogate_list">
+
+      <form
+        id="multi-step-form"
+        action="https://formspree.io/f/mvzywadq"
+        method="POST"
+        data-service-type="surrogate"
+        data-total-steps="5"
+      >
+        <!-- Hidden metadata fields -->
+        <input type="hidden" name="form_type" value="surrogate_application">
+        <input type="hidden" name="_subject" value="New Surrogate Application — EggSurrogatePay">
+        <input type="hidden" name="_next" value="https://eggsurrogatepay.com/thank-you.html">
+        <input type="hidden" id="form-state" name="state">
+        <input type="hidden" id="bmi-hidden" name="bmi_calculated">
+        <input type="hidden" id="age-flag" name="age_flag">
+        <input type="hidden" id="bmi-flag" name="bmi_flag">
+        <input type="hidden" id="timestamp" name="submitted_at">
+
+        <!-- ===================== -->
+        <!-- STEP 1: Contact Info  -->
+        <!-- ===================== -->
+        <div id="step-1" class="form-step">
+          <div class="form-step__title">Let's start with your contact info</div>
+          <div class="form-step__subtitle">This is how agencies will reach out to you.</div>
 
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
             <div class="form-group">
-              <label for="first-name">First Name <span class="required">*</span></label>
-              <input type="text" id="first-name" name="first_name" class="form-control" placeholder="Jane" required>
+              <label for="first_name">First Name <span class="required">*</span></label>
+              <input type="text" id="first_name" name="first_name" class="form-control" placeholder="Jane" required autocomplete="given-name">
+              <div id="first_name-error" class="field-error"></div>
             </div>
             <div class="form-group">
-              <label for="email">Email Address <span class="required">*</span></label>
-              <input type="email" id="email" name="email" class="form-control" placeholder="jane@email.com" required>
+              <label for="last_name">Last Name <span class="required">*</span></label>
+              <input type="text" id="last_name" name="last_name" class="form-control" placeholder="Smith" required autocomplete="family-name">
+              <div id="last_name-error" class="field-error"></div>
             </div>
           </div>
 
           <div class="form-group">
-            <label for="state">Your State <span class="required">*</span></label>
-            <select id="state" name="state" class="form-control" required>
-              <option value="">Select your state…</option>
-              <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option>
-              <option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option>
-              <option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option>
-              <option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option>
-              <option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option>
-              <option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option>
-              <option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option>
-              <option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option>
-              <option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option>
-              <option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option>
-              <option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option>
-              <option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option>
-              <option>Wisconsin</option><option>Wyoming</option>
+            <label for="email">Email Address <span class="required">*</span></label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="jane@email.com" required autocomplete="email">
+            <div id="email-error" class="field-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number <span class="required">*</span></label>
+            <input type="tel" id="phone" name="phone" class="form-control" placeholder="(555) 000-0000" required autocomplete="tel">
+            <div id="phone-error" class="field-error"></div>
+            <div style="font-size:0.82rem; color:var(--text-muted); margin-top:4px;">Agencies typically do an initial phone screening within 1 week.</div>
+          </div>
+
+          <div class="form-nav">
+            <span></span>
+            <button type="button" class="btn btn--primary" data-next-step="2">Next: Location &amp; Age →</button>
+          </div>
+        </div>
+
+        <!-- ========================= -->
+        <!-- STEP 2: Location & Age   -->
+        <!-- ========================= -->
+        <div id="step-2" class="form-step">
+          <div class="form-step__title">Where are you located?</div>
+          <div class="form-step__subtitle">Agencies are state-specific — your location determines which ones can work with you.</div>
+
+          <div class="form-group">
+            <label for="form-zip">Your Zip Code <span class="required">*</span></label>
+            <input type="tel" id="form-zip" name="zip_code" class="form-control" placeholder="90210" maxlength="5" inputmode="numeric" required autocomplete="postal-code">
+            <div id="form-state-display" class="zip-detect" style="margin-top:6px; font-size:0.9rem; color:var(--primary); font-weight:600; min-height:20px;"></div>
+            <div id="form-zip-error" class="field-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="form-age">Your Age <span class="required">*</span></label>
+            <select id="form-age" name="age" class="form-control" required>
+              <option value="">Select your age…</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+              <option value="32">32</option>
+              <option value="33">33</option>
+              <option value="34">34</option>
+              <option value="35">35</option>
+              <option value="36">36</option>
+              <option value="37">37</option>
+              <option value="38">38</option>
+              <option value="39">39</option>
+              <option value="40">40</option>
+              <option value="41">41</option>
+              <option value="42">42</option>
             </select>
+            <div id="form-age-error" class="field-error"></div>
+            <div style="font-size:0.82rem; color:var(--text-muted); margin-top:4px;">Most agencies accept surrogates aged 21–40.</div>
+          </div>
+
+          <div class="form-nav">
+            <button type="button" class="btn btn--outline btn--back" data-prev-step="1">← Back</button>
+            <button type="button" class="btn btn--primary" data-next-step="3">Next: Physical Info →</button>
+          </div>
+        </div>
+
+        <!-- ========================= -->
+        <!-- STEP 3: Physical / Births -->
+        <!-- ========================= -->
+        <div id="step-3" class="form-step">
+          <div class="form-step__title">A few physical details</div>
+          <div class="form-step__subtitle">Used to calculate BMI — agencies have health requirements to protect surrogates.</div>
+
+          <div class="form-group">
+            <label>Height <span class="required">*</span></label>
+            <div class="height-inputs">
+              <select id="feet" name="height_feet" class="form-control" required>
+                <option value="">ft</option>
+                <option value="4">4 ft</option>
+                <option value="5">5 ft</option>
+                <option value="6">6 ft</option>
+              </select>
+              <select id="inches" name="height_inches" class="form-control" required>
+                <option value="">in</option>
+                <option value="0">0 in</option>
+                <option value="1">1 in</option>
+                <option value="2">2 in</option>
+                <option value="3">3 in</option>
+                <option value="4">4 in</option>
+                <option value="5">5 in</option>
+                <option value="6">6 in</option>
+                <option value="7">7 in</option>
+                <option value="8">8 in</option>
+                <option value="9">9 in</option>
+                <option value="10">10 in</option>
+                <option value="11">11 in</option>
+              </select>
+            </div>
+            <div id="feet-error" class="field-error"></div>
           </div>
 
           <div class="form-group">
-            <label>Have you been pregnant before? <span class="required">*</span></label>
-            <div class="radio-group">
-              <label class="radio-option">
-                <input type="radio" name="prior_birth" value="yes" required>
-                <span>Yes — I've given birth at least once</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="prior_birth" value="no">
-                <span>No</span>
-              </label>
-            </div>
-            <p style="font-size:0.82rem; color:var(--text-muted); margin-top:6px;">Most agencies require at least one prior birth. You can still join the list either way.</p>
+            <label for="weight">Weight (lbs) <span class="required">*</span></label>
+            <input type="number" id="weight" name="weight_lbs" class="form-control" placeholder="150" min="80" max="400" required>
+            <div id="weight-error" class="field-error"></div>
           </div>
 
-          <button type="submit" class="btn btn--primary" style="font-size:1.05rem; padding:16px;">
-            Join the Early Access List →
-          </button>
+          <div class="form-group">
+            <label for="prior_births">How many times have you given birth? <span class="required">*</span></label>
+            <select id="prior_births" name="prior_births" class="form-control" required>
+              <option value="">Select…</option>
+              <option value="0">0 — have not given birth</option>
+              <option value="1">1 time</option>
+              <option value="2">2 times</option>
+              <option value="3">3 times</option>
+              <option value="4">4 times</option>
+              <option value="5_plus">5 or more times</option>
+            </select>
+            <div id="prior_births-error" class="field-error"></div>
+            <div style="font-size:0.82rem; color:var(--text-muted); margin-top:4px;">Agencies require at least one prior birth. You must currently be parenting that child.</div>
+          </div>
 
-          <p style="font-size:0.82rem; color:var(--text-muted); text-align:center; margin-top:-8px;">
-            By joining, you agree to our <a href="/privacy-policy">Privacy Policy</a> and <a href="/terms-of-service">Terms</a>. No spam. Unsubscribe anytime.
-          </p>
-        </form>
+          <div class="form-nav">
+            <button type="button" class="btn btn--outline btn--back" data-prev-step="2">← Back</button>
+            <button type="button" class="btn btn--primary" data-next-step="4">Next: Lifestyle →</button>
+          </div>
+        </div>
+
+        <!-- ======================== -->
+        <!-- STEP 4: Lifestyle       -->
+        <!-- ======================== -->
+        <div id="step-4" class="form-step">
+          <div class="form-step__title">A couple of lifestyle questions</div>
+          <div class="form-step__subtitle">These help us match you with the right agencies.</div>
+
+          <div class="form-group">
+            <label>Have you been a surrogate before? <span class="required">*</span></label>
+            <div class="radio-group" data-radio-required="prior_surrogacy">
+              <label class="radio-option">
+                <input type="radio" name="prior_surrogacy" value="no">
+                <span>No — this would be my first time</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="prior_surrogacy" value="yes_once">
+                <span>Yes — once</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="prior_surrogacy" value="yes_multiple">
+                <span>Yes — multiple times</span>
+              </label>
+            </div>
+            <div id="prior_surrogacy-error" class="field-error"></div>
+            <div style="font-size:0.82rem; color:var(--text-muted); margin-top:4px;">Experienced surrogates often qualify for higher compensation.</div>
+          </div>
+
+          <div class="form-group">
+            <label>Do you currently use tobacco or nicotine products? <span class="required">*</span></label>
+            <div class="radio-group" data-radio-required="tobacco_use">
+              <label class="radio-option">
+                <input type="radio" name="tobacco_use" value="no">
+                <span>No — I don't use tobacco or nicotine</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="tobacco_use" value="yes">
+                <span>Yes — I currently use tobacco or nicotine</span>
+              </label>
+            </div>
+            <div id="tobacco_use-error" class="field-error"></div>
+            <div style="font-size:0.82rem; color:var(--text-muted); margin-top:4px;">All agencies require surrogates to be non-smokers/non-nicotine users.</div>
+          </div>
+
+          <div class="form-nav">
+            <button type="button" class="btn btn--outline btn--back" data-prev-step="3">← Back</button>
+            <button type="button" class="btn btn--primary" data-next-step="5">Next: Final Step →</button>
+          </div>
+        </div>
+
+        <!-- ======================== -->
+        <!-- STEP 5: Intent & Consent -->
+        <!-- ======================== -->
+        <div id="step-5" class="form-step">
+          <div class="form-step__title">Almost done!</div>
+          <div class="form-step__subtitle">Tell us a little about yourself — this helps agencies understand your motivation.</div>
+
+          <div class="form-group">
+            <label for="motivation">Why do you want to become a surrogate? <span class="required">*</span></label>
+            <textarea id="motivation" name="motivation" class="form-control" rows="4" maxlength="500" placeholder="Share a bit about what motivates you…" required style="resize:vertical;"></textarea>
+            <div style="font-size:0.82rem; color:var(--text-muted); margin-top:4px; text-align:right;"><span id="motivation-count">0/500</span></div>
+            <div id="motivation-error" class="field-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="how_heard">How did you hear about us? <span class="required">*</span></label>
+            <select id="how_heard" name="how_heard" class="form-control" required>
+              <option value="">Select…</option>
+              <option value="google">Google / Search</option>
+              <option value="social_media">Social media (Instagram, TikTok, etc.)</option>
+              <option value="friend_referral">Friend or family referral</option>
+              <option value="reddit">Reddit</option>
+              <option value="other">Other</option>
+            </select>
+            <div id="how_heard-error" class="field-error"></div>
+          </div>
+
+          <div class="form-group" style="margin-top:28px; padding:20px; background:var(--bg-accent); border-radius:var(--radius-sm);">
+            <div style="font-weight:700; color:var(--primary); margin-bottom:16px; font-size:0.95rem;">Before you submit:</div>
+
+            <label style="display:flex; gap:12px; align-items:flex-start; margin-bottom:14px; cursor:pointer;">
+              <input type="checkbox" name="consent_accuracy" data-consent-required style="margin-top:3px; flex-shrink:0; width:18px; height:18px; accent-color:var(--primary);">
+              <span style="font-size:0.9rem; color:var(--text-light); line-height:1.5;">I confirm the information I've provided is accurate to the best of my knowledge.</span>
+            </label>
+
+            <label style="display:flex; gap:12px; align-items:flex-start; cursor:pointer;">
+              <input type="checkbox" name="consent_contact" data-consent-required style="margin-top:3px; flex-shrink:0; width:18px; height:18px; accent-color:var(--primary);">
+              <span style="font-size:0.9rem; color:var(--text-light); line-height:1.5;">I agree to be contacted by EggSurrogatePay.com and its partner agencies regarding my application.</span>
+            </label>
+
+            <div id="consent-error" class="field-error"></div>
+          </div>
+
+          <div class="form-nav" style="flex-direction:column; gap:16px; align-items:stretch;">
+            <div style="display:flex; gap:12px; justify-content:space-between; align-items:center;">
+              <button type="button" class="btn btn--outline btn--back" data-prev-step="4">← Back</button>
+              <button type="submit" id="submit-btn" class="btn btn--primary btn--lg">Submit My Application →</button>
+            </div>
+            <p style="font-size:0.78rem; color:var(--text-muted); text-align:center; margin:0;">
+              By submitting you agree to our <a href="/privacy-policy.html">Privacy Policy</a> and <a href="/terms-of-service.html">Terms of Service</a>.
+            </p>
+          </div>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- What happens next -->
+    <div style="margin-top:40px; padding:28px; background:var(--bg-accent); border-radius:var(--radius); border:1px solid rgba(45,95,93,0.12);">
+      <h3 style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:16px;">What happens after you apply?</h3>
+      <div class="steps-list">
+        <div class="step-item">
+          <div class="step-item__icon">📧</div>
+          <div>
+            <div class="step-item__title">Within 48 Hours</div>
+            <p class="step-item__text">Your application is reviewed and matched with licensed agencies in your area.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-item__icon">📞</div>
+          <div>
+            <div class="step-item__title">Within 1 Week</div>
+            <p class="step-item__text">Qualified applicants are contacted for a phone screening to discuss goals and answer questions.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-item__icon">💰</div>
+          <div>
+            <div class="step-item__title">18–24 Months</div>
+            <p class="step-item__text">Surrogates who complete the full process typically earn $40,000–$98,000 total compensation.</p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- What to do now -->
-    <div style="margin-top:40px;">
-      <h2 style="font-size:1.2rem; font-weight:700; color:var(--primary); margin-bottom:20px;">While you wait — understand what you'd earn</h2>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
-        <a href="/surrogate-pay" class="card" style="text-decoration:none; display:block;">
-          <p style="font-weight:700; color:var(--text); margin-bottom:6px;">Surrogate Pay Calculator</p>
-          <p style="font-size:0.9rem; color:var(--text-light); margin:0;">See your personalized compensation estimate including base pay, allowances, and lost wages.</p>
-        </a>
-        <a href="/surrogate-requirements" class="card" style="text-decoration:none; display:block;">
-          <p style="font-weight:700; color:var(--text); margin-bottom:6px;">Do You Qualify?</p>
-          <p style="font-size:0.9rem; color:var(--text-light); margin:0;">Check the typical agency requirements before agencies start reaching out.</p>
-        </a>
+    <!-- Secondary: Not ready yet -->
+    <div style="margin-top:32px; text-align:center; padding:24px; border:1px dashed var(--border); border-radius:var(--radius-sm);">
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:12px;">Not ready to apply yet?</p>
+      <a href="#waitlist-form" class="btn btn--outline" style="font-size:0.9rem;">Join the early access waitlist instead →</a>
+    </div>
+
+    <!-- Early access waitlist (secondary) -->
+    <div id="waitlist-form" style="margin-top:40px; scroll-margin-top:80px;">
+      <div class="calculator">
+        <div class="calculator__header">
+          <h3 style="font-size:1rem;">Early Access Waitlist</h3>
+          <p>Leave your email and we'll reach out when agencies in your area are recruiting.</p>
+        </div>
+        <div class="calculator__body">
+          <form action="https://formspree.io/f/mvzywadq" method="POST" style="display:flex; flex-direction:column; gap:16px;">
+            <input type="hidden" name="form_type" value="surrogate_waitlist">
+            <input type="hidden" name="_subject" value="Surrogate Waitlist — EggSurrogatePay">
+            <input type="hidden" name="_next" value="https://eggsurrogatepay.com/thank-you.html">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+              <div class="form-group" style="margin:0;">
+                <label for="wl-name">First Name</label>
+                <input type="text" id="wl-name" name="first_name" class="form-control" placeholder="Jane" required>
+              </div>
+              <div class="form-group" style="margin:0;">
+                <label for="wl-email">Email</label>
+                <input type="email" id="wl-email" name="email" class="form-control" placeholder="jane@email.com" required>
+              </div>
+            </div>
+            <button type="submit" class="btn btn--outline">Join Waitlist →</button>
+            <p style="font-size:0.78rem; color:var(--text-muted); text-align:center; margin:0;">No spam. Unsubscribe anytime.</p>
+          </form>
+        </div>
       </div>
     </div>
 
@@ -156,27 +411,28 @@
     <div class="footer__inner">
       <div>
         <div class="footer__brand">EggSurrogate<span>Pay</span></div>
-        <p class="footer__desc">Free compensation calculators for egg donors and surrogates.</p>
+        <p class="footer__desc">Free compensation calculators and application platform for egg donors and surrogates.</p>
       </div>
       <div class="footer__col">
         <h4>Egg Donation</h4>
-        <a href="/egg-donor-pay">Compensation Calculator</a>
-        <a href="/egg-donor-requirements">Requirements</a>
-        <a href="/how-egg-donation-works">How It Works</a>
+        <a href="/egg-donor-pay.html">Compensation Calculator</a>
+        <a href="/egg-donor-requirements.html">Requirements</a>
+        <a href="/how-egg-donation-works.html">How It Works</a>
       </div>
       <div class="footer__col">
         <h4>Surrogacy</h4>
-        <a href="/surrogate-pay">Compensation Calculator</a>
-        <a href="/surrogate-requirements">Requirements</a>
-        <a href="/how-surrogacy-works">How It Works</a>
+        <a href="/surrogate-pay.html">Compensation Calculator</a>
+        <a href="/surrogate-requirements.html">Requirements</a>
+        <a href="/how-surrogacy-works.html">How It Works</a>
       </div>
     </div>
     <div class="footer__bottom">
       <span>© 2026 EggSurrogatePay.com · hello@eggsurrogatepay.com</span>
       <div class="footer__legal">
-        <a href="/privacy-policy">Privacy Policy</a>
-        <a href="/terms-of-service">Terms of Service</a>
-        <a href="/faq">FAQ</a>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/terms-of-service.html">Terms of Service</a>
+        <a href="/methodology.html">Methodology</a>
+        <a href="mailto:hello@eggsurrogatepay.com">Contact</a>
       </div>
     </div>
   </div>
@@ -187,5 +443,7 @@
     document.getElementById('nav-links').classList.toggle('open');
   });
 </script>
+<script src="/assets/zip-lookup.js"></script>
+<script src="/assets/form.js"></script>
 </body>
 </html>
