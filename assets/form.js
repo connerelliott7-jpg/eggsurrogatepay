@@ -111,10 +111,14 @@ document.addEventListener('DOMContentLoaded', function () {
       e.preventDefault();
       if (!validateStep(totalSteps)) return;
       calculateHiddenFields();
-      var stateVal = document.getElementById('form-state') ? document.getElementById('form-state').value : '';
+      var stateVal = (document.getElementById('form-state') || {}).value || '';
       var serviceVal = multiForm.dataset.serviceType || '';
-      if (stateVal) sessionStorage.setItem('esp_state', stateVal);
-      if (serviceVal) sessionStorage.setItem('esp_service', serviceVal);
+      // Append state + service to _next so it survives the Formspree redirect
+      var nextInput = multiForm.querySelector('input[name="_next"]');
+      if (nextInput && stateVal) {
+        var base = nextInput.value.split('?')[0];
+        nextInput.value = base + '?state=' + encodeURIComponent(stateVal) + '&service=' + encodeURIComponent(serviceVal);
+      }
       multiForm.submit();
     });
   }

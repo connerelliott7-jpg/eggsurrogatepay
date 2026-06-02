@@ -300,8 +300,9 @@
 
     function fmt(n) { return '$' + n.toLocaleString(); }
 
-    var state = sessionStorage.getItem('esp_state');
-    var service = sessionStorage.getItem('esp_service');
+    var params = new URLSearchParams(window.location.search);
+    var state = params.get('state') || sessionStorage.getItem('esp_state');
+    var service = params.get('service') || sessionStorage.getItem('esp_service');
     if (!state) return;
 
     var data, label;
