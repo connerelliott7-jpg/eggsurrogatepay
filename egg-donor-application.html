@@ -366,6 +366,9 @@
   document.getElementById('nav-toggle').addEventListener('click', function() {
     document.getElementById('nav-links').classList.toggle('open');
   });
+  // Set multiline placeholder via JS (&#10; entities unreliable cross-browser)
+  var motEl = document.getElementById('motivation');
+  if (motEl) motEl.placeholder = "Share a bit about what motivates you…\n\ne.g. “I want to help a family who can’t conceive on their own.” or “I’d like to use the compensation toward student loans.” Any honest answer is welcome.";
 </script>
 <script src="/assets/zip-lookup.js"></script>
 <script src="/assets/form.js"></script>
