@@ -168,17 +168,16 @@ function initEggDonorCalc(form) {
           Learn More About the Process
         </a>
       </div>
-      <details class="results-disclaimer">
-        <summary style="cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px;">
-          <span>ℹ️</span><strong>Compensation Disclaimer</strong><span style="margin-left:auto;font-size:0.8rem;opacity:0.6;">tap to expand</span>
-        </summary>
-        <p style="margin:8px 0 0;font-size:0.85rem;line-height:1.55;">This is an estimate based on average market rates. Actual compensation is determined by the agency you work with based on current demand and your qualifications. Sources: Industry surveys of 30+ agencies, 2024–2026 data.</p>
-      </details>
+      <div class="results-disclaimer" id="egg-disclaimer">
+        <div onclick="var b=document.getElementById('egg-disclaimer-body');b.style.display=b.style.display==='none'?'block':'none';this.querySelector('.disc-arrow').textContent=b.style.display==='none'?'▸':'▾';" style="cursor:pointer;display:flex;align-items:center;gap:6px;user-select:none;">
+          <strong style="margin:0;">ℹ️ Compensation Disclaimer</strong>
+          <span class="disc-arrow" style="margin-left:auto;font-size:0.85rem;">▸</span>
+        </div>
+        <div id="egg-disclaimer-body" style="display:none;margin-top:10px;font-size:0.85rem;line-height:1.55;">This is an estimate based on average market rates. Actual compensation is determined by the agency you work with based on current demand and your qualifications. Sources: Industry surveys of 30+ agencies, 2024–2026 data.</div>
+      </div>
     `;
 
-    // Hide the calculate button now that results are showing
-    var calcBtn = document.querySelector('[data-calc-btn]');
-    if (calcBtn) calcBtn.style.display = 'none';
+    btn.style.display = 'none';
 
     resultsEl.classList.add('show');
     resultsEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -306,17 +305,16 @@ function initSurrogateCalc(form) {
           Learn More About the Process
         </a>
       </div>
-      <details class="results-disclaimer">
-        <summary style="cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px;">
-          <span>ℹ️</span><strong>Compensation Disclaimer</strong><span style="margin-left:auto;font-size:0.8rem;opacity:0.6;">tap to expand</span>
-        </summary>
-        <p style="margin:8px 0 0;font-size:0.85rem;line-height:1.55;">This is an estimate based on average market rates. Actual compensation is determined by the agency you work with based on current demand and your qualifications. Sources: Industry surveys of 30+ agencies, 2024–2026 data.</p>
-      </details>
+      <div class="results-disclaimer" id="sur-disclaimer">
+        <div onclick="var b=document.getElementById('sur-disclaimer-body');b.style.display=b.style.display==='none'?'block':'none';this.querySelector('.disc-arrow').textContent=b.style.display==='none'?'▸':'▾';" style="cursor:pointer;display:flex;align-items:center;gap:6px;user-select:none;">
+          <strong style="margin:0;">ℹ️ Compensation Disclaimer</strong>
+          <span class="disc-arrow" style="margin-left:auto;font-size:0.85rem;">▸</span>
+        </div>
+        <div id="sur-disclaimer-body" style="display:none;margin-top:10px;font-size:0.85rem;line-height:1.55;">This is an estimate based on average market rates. Actual compensation is determined by the agency you work with based on current demand and your qualifications. Sources: Industry surveys of 30+ agencies, 2024–2026 data.</div>
+      </div>
     `;
 
-    // Hide the calculate button now that results are showing
-    var calcBtn = document.querySelector('[data-calc-btn]');
-    if (calcBtn) calcBtn.style.display = 'none';
+    btn.style.display = 'none';
 
     resultsEl.classList.add('show');
     resultsEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
