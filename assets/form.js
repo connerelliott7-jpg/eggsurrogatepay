@@ -111,6 +111,10 @@ document.addEventListener('DOMContentLoaded', function () {
       e.preventDefault();
       if (!validateStep(totalSteps)) return;
       calculateHiddenFields();
+      var stateVal = document.getElementById('form-state') ? document.getElementById('form-state').value : '';
+      var serviceVal = multiForm.dataset.serviceType || '';
+      if (stateVal) sessionStorage.setItem('esp_state', stateVal);
+      if (serviceVal) sessionStorage.setItem('esp_service', serviceVal);
       multiForm.submit();
     });
   }

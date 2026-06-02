@@ -158,6 +158,13 @@
         </div>
       </div>
 
+      <!-- Comp range — shown when state is known -->
+      <div id="comp-range-card" style="display:none; background:var(--bg-accent); border:1px solid rgba(45,95,93,0.2); border-radius:12px; padding:24px; margin-bottom:24px; text-align:left;">
+        <p style="font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:0.07em; color:var(--primary); margin:0 0 8px;">Estimated range for your area</p>
+        <p id="comp-range-value" style="font-size:1.9rem; font-weight:800; color:var(--text); margin:0 0 6px;"></p>
+        <p id="comp-range-note" style="font-size:0.85rem; color:var(--text-light); margin:0; line-height:1.5;"></p>
+      </div>
+
       <hr class="thankyou__divider">
 
       <p style="font-size:1rem; font-weight:600; color:var(--text); margin-bottom:16px;">Use this time to understand what you'd earn</p>
@@ -225,6 +232,99 @@
       if (ctaSur) { ctaSur.className = 'btn btn--primary'; }
       if (ctaEgg) { ctaEgg.className = 'btn btn--outline'; }
     }
+  })();
+
+  // Comp range from sessionStorage
+  (function() {
+    var EGG_COMP = {
+      CA:{low:8000,high:15000,note:'California agencies pay among the highest rates nationally.'},
+      NY:{low:8000,high:14000,note:'New York has a strong agency market with competitive compensation.'},
+      MA:{low:7500,high:13000,note:'Boston-area programs are active and well-funded.'},
+      CT:{low:7000,high:12000,note:'Connecticut donors often work with NYC-area agencies as well.'},
+      NJ:{low:7000,high:12000,note:'Proximity to NYC and Philadelphia agencies expands your options.'},
+      IL:{low:7000,high:12000,note:'Chicago-area agencies offer competitive first-time donor rates.'},
+      WA:{low:7000,high:12000,note:'Seattle has a growing fertility clinic and agency market.'},
+      MD:{low:6500,high:11000,note:'DC-metro agencies are active and well-funded.'},
+      DC:{low:7000,high:12000,note:'DC-area donors can work with agencies across the metro region.'},
+      CO:{low:6500,high:11000,note:'Denver has a robust fertility community with strong agency presence.'},
+      HI:{low:6500,high:11000,note:'Hawaii programs are fewer but tend to offer competitive rates.'},
+      TX:{low:6000,high:10000,note:'Texas has one of the largest agency markets outside the coasts.'},
+      FL:{low:6000,high:10000,note:'Florida has a high volume of active fertility agencies.'},
+      GA:{low:6000,high:10000,note:'Atlanta is a growing hub for fertility agencies in the Southeast.'},
+      VA:{low:6000,high:10000,note:'Northern Virginia donors often access DC-metro agencies.'},
+      PA:{low:6000,high:10000,note:'Philadelphia and Pittsburgh both have established agency networks.'},
+      OR:{low:6000,high:10000,note:'Portland-area agencies are active and growing.'},
+      AZ:{low:6000,high:10000,note:'Phoenix has a well-established fertility and egg donor market.'},
+      NV:{low:6000,high:10000,note:'Las Vegas and Reno have a growing number of fertility programs.'},
+      MN:{low:5500,high:9000,note:'Minneapolis has several established fertility agencies.'},
+      OH:{low:5500,high:9000,note:'Columbus, Cleveland, and Cincinnati all have active programs.'},
+      MI:{low:5500,high:9000,note:'Detroit-area agencies serve a large regional donor pool.'},
+      NC:{low:5500,high:9000,note:'Charlotte and Raleigh have growing fertility agency markets.'},
+      TN:{low:5500,high:9000,note:'Nashville has seen growing demand for fertility services.'},
+      WI:{low:5500,high:9000,note:'Milwaukee and Madison have established agency programs.'},
+      MO:{low:5500,high:9000,note:'Kansas City and St. Louis both have active agency networks.'},
+      IN:{low:5500,high:9000,note:'Indianapolis has a number of established fertility programs.'},
+    };
+    var SUR_COMP = {
+      CA:{low:45000,high:65000,note:'California has some of the highest surrogate compensation in the country.'},
+      NY:{low:45000,high:60000,note:'New York is a strong surrogacy market with competitive agency rates.'},
+      CT:{low:42000,high:58000,note:'Connecticut agencies often compete with NYC-area rates.'},
+      NJ:{low:42000,high:58000,note:'NJ surrogates can often work with both NYC and Philadelphia agencies.'},
+      IL:{low:40000,high:55000,note:'Chicago-area agencies offer competitive surrogate compensation.'},
+      WA:{low:40000,high:55000,note:'Seattle has a strong and growing surrogacy agency market.'},
+      CO:{low:38000,high:52000,note:'Denver is a hub for surrogacy agencies in the Mountain West.'},
+      TX:{low:35000,high:50000,note:'Texas has one of the largest surrogacy markets in the US.'},
+      FL:{low:35000,high:50000,note:'Florida has a large and active surrogacy agency ecosystem.'},
+      GA:{low:35000,high:48000,note:'Atlanta is a growing surrogacy hub in the Southeast.'},
+      OR:{low:35000,high:48000,note:'Oregon has a favorable legal environment for surrogacy.'},
+      NV:{low:35000,high:48000,note:'Nevada is a popular surrogacy state with clear legal frameworks.'},
+      PA:{low:33000,high:47000,note:'Philadelphia and Pittsburgh both have established surrogacy agencies.'},
+      VA:{low:33000,high:47000,note:'Northern Virginia surrogates often access DC-metro agency networks.'},
+      NC:{low:30000,high:43000,note:'North Carolina is an emerging market with growing agency presence.'},
+      OH:{low:30000,high:43000,note:'Ohio has several active surrogacy agencies in major metro areas.'},
+      MI:{low:30000,high:43000,note:'Michigan has a growing surrogacy agency market.'},
+      MN:{low:30000,high:43000,note:'Minnesota has established agencies and a favorable legal climate.'},
+    };
+    var STATE_NAMES = {
+      AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',
+      DE:'Delaware',DC:'Washington D.C.',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',
+      IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',
+      MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',
+      NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',
+      OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',
+      TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',
+      WI:'Wisconsin',WY:'Wyoming'
+    };
+    var DEFAULT_EGG = {low:5000,high:8000,note:'Ranges vary by agency. Donors in your area may also work with agencies in nearby metro markets.'};
+    var DEFAULT_SUR = {low:28000,high:42000,note:'Ranges vary by agency and state. Many surrogates also work with agencies in nearby states.'};
+
+    function fmt(n) { return '$' + n.toLocaleString(); }
+
+    var state = sessionStorage.getItem('esp_state');
+    var service = sessionStorage.getItem('esp_service');
+    if (!state) return;
+
+    var data, label;
+    if (service === 'surrogate') {
+      data = SUR_COMP[state] || DEFAULT_SUR;
+      label = 'per pregnancy';
+    } else {
+      data = EGG_COMP[state] || DEFAULT_EGG;
+      label = 'per cycle';
+    }
+
+    var stateName = STATE_NAMES[state] || 'your area';
+    var card = document.getElementById('comp-range-card');
+    var val = document.getElementById('comp-range-value');
+    var note = document.getElementById('comp-range-note');
+    if (card && val && note) {
+      val.textContent = fmt(data.low) + ' – ' + fmt(data.high) + ' ' + label;
+      note.textContent = 'First-time applicants in ' + stateName + '. ' + data.note;
+      card.style.display = 'block';
+    }
+
+    sessionStorage.removeItem('esp_state');
+    sessionStorage.removeItem('esp_service');
   })();
 </script>
 </body>
