@@ -138,6 +138,9 @@ function initEggDonorCalc(form) {
 
     // Render results
     resultsEl.innerHTML = `
+      <a href="/egg-donor-application.html" class="btn btn--secondary btn--full" style="font-size:1.05rem;padding:16px;margin-bottom:12px;" onclick="trackAppStart('egg_donor')">
+        Apply Now — Earn Up to ${fmt(totalMax)} →
+      </a>
       <div class="results-card">
         <div class="results-card__title">YOUR ESTIMATED COMPENSATION</div>
         <div class="results-card__label">💰 ${expLabel} in ${stateName}${eduLabel}</div>
@@ -160,14 +163,9 @@ function initEggDonorCalc(form) {
           <span>📋 Commitment: 10–15 clinic visits</span>
         </div>
       </div>
-      <div class="results-ctas">
-        <a href="/egg-donor-application.html" class="btn btn--primary btn--full" style="font-size:1.05rem;padding:16px;" onclick="trackAppStart('egg_donor')">
-          Apply Now — Earn Up to ${fmt(totalMax)} →
-        </a>
-        <a href="#how-it-works" class="btn btn--outline btn--full" style="margin-top:10px;">
-          Learn More About the Process
-        </a>
-      </div>
+      <a href="#how-it-works" class="btn btn--outline btn--full" style="margin-bottom:12px;">
+        Learn More About the Process
+      </a>
       <div class="results-disclaimer" id="egg-disclaimer">
         <div onclick="var b=document.getElementById('egg-disclaimer-body');b.style.display=b.style.display==='none'?'block':'none';this.querySelector('.disc-arrow').textContent=b.style.display==='none'?'▸':'▾';" style="cursor:pointer;display:flex;align-items:center;gap:6px;user-select:none;">
           <strong style="margin:0;">ℹ️ Compensation Disclaimer</strong>
@@ -267,6 +265,9 @@ function initSurrogateCalc(form) {
     const expLabel = expValue === 'first' ? 'First-Time Surrogate' : expValue === 'once' ? 'Experienced Surrogate (1 prior)' : 'Experienced Surrogate (2+)';
 
     resultsEl.innerHTML = `
+      <a href="/surrogate-application.html" class="btn btn--secondary btn--full" style="font-size:1.05rem;padding:16px;margin-bottom:12px;" onclick="trackAppStart('surrogate')">
+        Apply Now — Earn Up to ${fmt(totalMax)} →
+      </a>
       <div class="results-card">
         <div class="results-card__title">YOUR ESTIMATED COMPENSATION</div>
         <div class="results-card__label">💰 ${expLabel} in ${stateName}</div>
@@ -297,14 +298,9 @@ function initSurrogateCalc(form) {
           <span>📋 Commitment: Full pregnancy + 6 weeks post</span>
         </div>
       </div>
-      <div class="results-ctas">
-        <a href="/surrogate-application.html" class="btn btn--primary btn--full" style="font-size:1.05rem;padding:16px;" onclick="trackAppStart('surrogate')">
-          Apply Now — Earn Up to ${fmt(totalMax)} →
-        </a>
-        <a href="#how-it-works" class="btn btn--outline btn--full" style="margin-top:10px;">
-          Learn More About the Process
-        </a>
-      </div>
+      <a href="#how-it-works" class="btn btn--outline btn--full" style="margin-bottom:12px;">
+        Learn More About the Process
+      </a>
       <div class="results-disclaimer" id="sur-disclaimer">
         <div onclick="var b=document.getElementById('sur-disclaimer-body');b.style.display=b.style.display==='none'?'block':'none';this.querySelector('.disc-arrow').textContent=b.style.display==='none'?'▸':'▾';" style="cursor:pointer;display:flex;align-items:center;gap:6px;user-select:none;">
           <strong style="margin:0;">ℹ️ Compensation Disclaimer</strong>
