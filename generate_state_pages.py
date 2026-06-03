@@ -5,7 +5,7 @@ Generate 100 state-level HTML pages for eggsurrogatepay.com
 """
 import os
 
-BASE_DIR = '/Users/connerelliott/Projects/eggsurrogatepay'
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 GUIDES_DIR = os.path.join(BASE_DIR, 'guides')
 
 os.makedirs(GUIDES_DIR, exist_ok=True)
@@ -253,8 +253,8 @@ def generate_egg_donor_page(state):
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Egg Donor Pay in {name} (2026) | EggSurrogatePay.com</title>
-  <meta name="description" content="How much do egg donors make in {name}? First-time donors earn {fmt(first_min)}-{fmt(first_max)}. See full compensation breakdown, requirements, and how to apply.">
+  <title>{name} Egg Donor Pay 2026: Earn {fmt(first_min)}–{fmt(first_max)}</title>
+  <meta name="description" content="Earn {fmt(first_min)}–{fmt(first_max)} as an egg donor in {name}. See requirements, timeline, and how to apply for 2026 programs.">
   <link rel="canonical" href="https://eggsurrogatepay.com/guides/egg-donor-pay-{slug}.html">
   <link rel="stylesheet" href="../assets/styles.css">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RR00CQ3CMS"></script>
@@ -553,8 +553,8 @@ def generate_surrogate_page(state):
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Surrogate Pay in {name} (2026) | EggSurrogatePay.com</title>
-  <meta name="description" content="How much do surrogates make in {name}? First-time surrogates earn {fmt(first_min)}–{fmt(first_max)} base plus allowances. See full breakdown and requirements.">
+  <title>{name} Surrogate Pay 2026: Earn {fmt(first_min)}–{fmt(first_max)}</title>
+  <meta name="description" content="Earn {fmt(first_min)}–{fmt(first_max)} as a surrogate in {name}. See base pay, allowances, and requirements for 2026 placements.">
   <link rel="canonical" href="https://eggsurrogatepay.com/guides/surrogate-pay-{slug}.html">
   <link rel="stylesheet" href="../assets/styles.css">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RR00CQ3CMS"></script>
