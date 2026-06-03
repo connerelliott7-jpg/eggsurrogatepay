@@ -257,8 +257,7 @@ def generate_egg_donor_page(state):
   <meta name="description" content="Earn {fmt(first_min)}–{fmt(first_max)} as an egg donor in {name}. See requirements, timeline, and how to apply for 2026 programs.">
   <link rel="canonical" href="https://eggsurrogatepay.com/guides/egg-donor-pay-{slug}.html">
   <link rel="stylesheet" href="../assets/styles.css">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RR00CQ3CMS"></script>
-  <script>
+    <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){{dataLayer.push(arguments);}}
     gtag('js', new Date());
@@ -268,6 +267,18 @@ def generate_egg_donor_page(state):
       'service_type': 'egg_donor',
       'state_tier': '{tier}'
     }});
+  (function() {
+    function _loadGA() {
+      var s = document.createElement('script');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-RR00CQ3CMS';
+      s.async = true;
+      document.head.appendChild(s);
+    }
+    ['mousedown','scroll','touchstart','keydown'].forEach(function(e) {
+      document.addEventListener(e, _loadGA, {once: true, passive: true});
+    });
+    setTimeout(_loadGA, 4000);
+  })();
   </script>
 </head>
 <body>
@@ -463,13 +474,24 @@ def generate_surrogate_page_illegal(state):
   <meta name="description" content="Learn about surrogacy laws in {name} and egg donor opportunities available to residents. Egg donors in {name} earn $7,000–$12,000.">
   <link rel="canonical" href="https://eggsurrogatepay.com/guides/surrogate-pay-{slug}.html">
   <link rel="stylesheet" href="../assets/styles.css">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RR00CQ3CMS"></script>
-  <script>
+    <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){{dataLayer.push(arguments);}}
     gtag('js', new Date());
     gtag('config', 'G-RR00CQ3CMS');
     gtag('event', 'state_page_viewed', {{'state': '{name}', 'service_type': 'surrogate', 'surrogate_legal': false}});
+  (function() {
+    function _loadGA() {
+      var s = document.createElement('script');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-RR00CQ3CMS';
+      s.async = true;
+      document.head.appendChild(s);
+    }
+    ['mousedown','scroll','touchstart','keydown'].forEach(function(e) {
+      document.addEventListener(e, _loadGA, {once: true, passive: true});
+    });
+    setTimeout(_loadGA, 4000);
+  })();
   </script>
 </head>
 <body>
@@ -557,8 +579,7 @@ def generate_surrogate_page(state):
   <meta name="description" content="Earn {fmt(first_min)}–{fmt(first_max)} as a surrogate in {name}. See base pay, allowances, and requirements for 2026 placements.">
   <link rel="canonical" href="https://eggsurrogatepay.com/guides/surrogate-pay-{slug}.html">
   <link rel="stylesheet" href="../assets/styles.css">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RR00CQ3CMS"></script>
-  <script>
+    <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){{dataLayer.push(arguments);}}
     gtag('js', new Date());
@@ -569,6 +590,18 @@ def generate_surrogate_page(state):
       'state_tier': '{tier}',
       'surrogate_legal': true
     }});
+  (function() {
+    function _loadGA() {
+      var s = document.createElement('script');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-RR00CQ3CMS';
+      s.async = true;
+      document.head.appendChild(s);
+    }
+    ['mousedown','scroll','touchstart','keydown'].forEach(function(e) {
+      document.addEventListener(e, _loadGA, {once: true, passive: true});
+    });
+    setTimeout(_loadGA, 4000);
+  })();
   </script>
 </head>
 <body>

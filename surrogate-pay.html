@@ -16,8 +16,6 @@
     {"@type":"Question","name":"What are the basic surrogate requirements?","acceptedAnswer":{"@type":"Answer","text":"Most agencies require surrogates to be: 21–40 years old, have had at least one prior birth with no major complications, be non-smokers, have a BMI under 32, be financially stable (not receiving government assistance), and pass psychological and medical evaluations. Requirements vary by agency."}},
     {"@type":"Question","name":"How much do surrogates make?","acceptedAnswer":{"@type":"Answer","text":"Surrogate base compensation typically ranges from $40,000–$80,000 depending on state and experience, plus monthly allowances of $3,000–$6,000 throughout the pregnancy, maternity clothing allowance ($1,000–$2,000), and lost wages reimbursement ($3,000–$10,000). Total compensation packages often range from $47,000 to $98,000+ depending on state and experience."}}
   ]}</script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RR00CQ3CMS"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -25,6 +23,18 @@
       gtag('js', new Date());
       gtag('config', 'G-RR00CQ3CMS');
     }
+  (function() {
+    function _loadGA() {
+      var s = document.createElement('script');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-RR00CQ3CMS';
+      s.async = true;
+      document.head.appendChild(s);
+    }
+    ['mousedown','scroll','touchstart','keydown'].forEach(function(e) {
+      document.addEventListener(e, _loadGA, {once: true, passive: true});
+    });
+    setTimeout(_loadGA, 4000);
+  })();
   </script>
 </head>
 <body>

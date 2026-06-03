@@ -13,8 +13,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/styles.css">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RR00CQ3CMS"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -22,6 +20,18 @@
       gtag('js', new Date());
       gtag('config', 'G-RR00CQ3CMS');
     }
+  (function() {
+    function _loadGA() {
+      var s = document.createElement('script');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-RR00CQ3CMS';
+      s.async = true;
+      document.head.appendChild(s);
+    }
+    ['mousedown','scroll','touchstart','keydown'].forEach(function(e) {
+      document.addEventListener(e, _loadGA, {once: true, passive: true});
+    });
+    setTimeout(_loadGA, 4000);
+  })();
   </script>
 <script type="application/ld+json">
 {
