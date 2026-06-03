@@ -11,8 +11,10 @@
   <link rel="canonical" href="https://eggsurrogatepay.com/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet"></noscript>
+  <link rel="preload" href="/assets/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/styles.css"></noscript>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RR00CQ3CMS"></script>
   <script>
@@ -471,7 +473,7 @@ function hcTrack(tab,el){
   }
 }
 </script>
-<script src="/assets/zip-lookup.js"></script>
+<script defer src="/assets/zip-lookup.js"></script>
 <script src="/assets/analytics.js" defer></script>
 </body>
 </html>
