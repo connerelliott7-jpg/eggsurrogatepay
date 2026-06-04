@@ -34,7 +34,6 @@
     ['mousedown','scroll','touchstart','keydown'].forEach(function(e) {
       document.addEventListener(e, _loadGA, {once: true, passive: true});
     });
-    setTimeout(_loadGA, 4000);
   })();
   </script>
   <style>

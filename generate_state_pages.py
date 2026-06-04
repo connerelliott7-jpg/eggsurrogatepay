@@ -278,7 +278,6 @@ def generate_egg_donor_page(state):
     ['mousedown','scroll','touchstart','keydown'].forEach(function(e) {
       document.addEventListener(e, _loadGA, {once: true, passive: true});
     });
-    setTimeout(_loadGA, 4000);
   })();
   </script>
 </head>
@@ -492,7 +491,6 @@ def generate_surrogate_page_illegal(state):
     ['mousedown','scroll','touchstart','keydown'].forEach(function(e) {
       document.addEventListener(e, _loadGA, {once: true, passive: true});
     });
-    setTimeout(_loadGA, 4000);
   })();
   </script>
 </head>
@@ -603,7 +601,6 @@ def generate_surrogate_page(state):
     ['mousedown','scroll','touchstart','keydown'].forEach(function(e) {
       document.addEventListener(e, _loadGA, {once: true, passive: true});
     });
-    setTimeout(_loadGA, 4000);
   })();
   </script>
 </head>
