@@ -272,12 +272,13 @@ def generate_egg_donor_page(state):
       var s = document.createElement('script');
       s.src = 'https://www.googletagmanager.com/gtag/js?id=G-RR00CQ3CMS';
       s.async = true;
+      s.onload = function() { gtag('event', 'page_engaged'); };
       document.head.appendChild(s);
     }
     ['mousedown','scroll','touchstart','keydown'].forEach(function(e) {
       document.addEventListener(e, _loadGA, {once: true, passive: true});
     });
-    setTimeout(_loadGA, 4000);
+    setTimeout(_loadGA, 2000);
   })();
   </script>
 </head>
@@ -485,12 +486,13 @@ def generate_surrogate_page_illegal(state):
       var s = document.createElement('script');
       s.src = 'https://www.googletagmanager.com/gtag/js?id=G-RR00CQ3CMS';
       s.async = true;
+      s.onload = function() { gtag('event', 'page_engaged'); };
       document.head.appendChild(s);
     }
     ['mousedown','scroll','touchstart','keydown'].forEach(function(e) {
       document.addEventListener(e, _loadGA, {once: true, passive: true});
     });
-    setTimeout(_loadGA, 4000);
+    setTimeout(_loadGA, 2000);
   })();
   </script>
 </head>
@@ -595,12 +597,13 @@ def generate_surrogate_page(state):
       var s = document.createElement('script');
       s.src = 'https://www.googletagmanager.com/gtag/js?id=G-RR00CQ3CMS';
       s.async = true;
+      s.onload = function() { gtag('event', 'page_engaged'); };
       document.head.appendChild(s);
     }
     ['mousedown','scroll','touchstart','keydown'].forEach(function(e) {
       document.addEventListener(e, _loadGA, {once: true, passive: true});
     });
-    setTimeout(_loadGA, 4000);
+    setTimeout(_loadGA, 2000);
   })();
   </script>
 </head>
