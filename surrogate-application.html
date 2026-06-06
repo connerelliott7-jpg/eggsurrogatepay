@@ -92,11 +92,18 @@
         <input type="hidden" name="form_type" value="surrogate_application">
         <input type="hidden" name="_subject" value="New Surrogate Application — EggSurrogatePay">
         <input type="hidden" name="_next" value="https://eggsurrogatepay.com/thank-you.html">
+        <input type="hidden" name="_captcha" value="false">
         <input type="hidden" id="form-state" name="state">
         <input type="hidden" id="bmi-hidden" name="bmi_calculated">
         <input type="hidden" id="age-flag" name="age_flag">
         <input type="hidden" id="bmi-flag" name="bmi_flag">
+        <input type="hidden" id="birth-flag" name="birth_flag">
         <input type="hidden" id="timestamp" name="submitted_at">
+        <!-- Honeypot: hidden from real users, bots fill it out -->
+        <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+          <label for="website">Website (leave blank)</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
 
         <!-- ===================== -->
         <!-- STEP 1: Contact Info  -->

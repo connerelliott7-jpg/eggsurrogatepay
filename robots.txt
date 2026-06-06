@@ -3,4 +3,23 @@ Allow: /
 
 Disallow: /thank-you.html
 
+# Block known scraper/spam bots — not search engines
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
 Sitemap: https://eggsurrogatepay.com/sitemap.xml

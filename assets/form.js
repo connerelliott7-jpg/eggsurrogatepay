@@ -115,6 +115,10 @@ document.addEventListener('DOMContentLoaded', function () {
       var stateVal = (document.getElementById('form-state') || {}).value || '';
       var serviceVal = multiForm.dataset.serviceType || '';
 
+      // Honeypot check — bots fill the hidden website field, humans don't
+      var honeypot = document.getElementById('website');
+      if (honeypot && honeypot.value !== '') return;
+
       submitBtn.disabled = true;
       submitBtn.textContent = 'Submitting…';
 
@@ -279,6 +283,13 @@ document.addEventListener('DOMContentLoaded', function () {
       } else {
         ageFlag.value = age < 21 ? 'Under 21' : age > 31 ? 'Over 31' : '';
       }
+    }
+
+    // Birth flag (surrogate only)
+    var birthFlagEl = document.getElementById('birth-flag');
+    var priorBirthsEl = document.getElementById('prior_births');
+    if (birthFlagEl && priorBirthsEl) {
+      birthFlagEl.value = parseInt(priorBirthsEl.value, 10) === 0 ? 'No prior births' : '';
     }
 
     if (tsHidden) tsHidden.value = new Date().toISOString();
