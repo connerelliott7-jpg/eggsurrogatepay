@@ -24,6 +24,12 @@ GitHub: connerelliott7-jpg/eggsurrogatepay
 - Measurement ID: G-RR00CQ3CMS
 - Lazy-loaded on first user interaction only (mousedown/scroll/touch/key)
 
+## GSC Verification
+- **Status: Verified owner**
+- **Method: Google Analytics association** (GA4 property G-RR00CQ3CMS detected on site)
+- No HTML `<meta name="google-site-verification">` tag exists or is needed
+- Do NOT add a GSC meta tag — verification is already complete via GA4
+
 ---
 
 ## Content Standards
