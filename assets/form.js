@@ -253,6 +253,36 @@ document.addEventListener('DOMContentLoaded', function () {
     return valid;
   }
 
+  function calculateAgencyReady(formType, age, bmi, tobacco, education, priorBirths) {
+    var flags = [];
+    var ready = true;
+
+    if (formType === 'egg_donor') {
+      if (age < 21) { flags.push('Under 21'); ready = false; }
+      if (age > 31) { flags.push('Over 31'); ready = false; }
+      if (bmi > 32) { flags.push('BMI above 32'); ready = false; }
+      if (tobacco === 'yes') { flags.push('Tobacco user'); ready = false; }
+      if (education === 'high_school') { flags.push('High school only'); }
+      if (age >= 30 && age <= 31) { flags.push('Age 30-31 limited options'); }
+      if (bmi >= 29 && bmi <= 32) { flags.push('BMI borderline 29-32'); }
+    }
+
+    if (formType === 'surrogate') {
+      if (age < 21) { flags.push('Under 21'); ready = false; }
+      if (age > 40) { flags.push('Over 40'); ready = false; }
+      if (bmi > 32) { flags.push('BMI above 32'); ready = false; }
+      if (tobacco === 'yes') { flags.push('Tobacco user'); ready = false; }
+      if (priorBirths !== null && parseInt(priorBirths) === 0) { flags.push('No prior births'); ready = false; }
+      if (age >= 38 && age <= 40) { flags.push('Age 38-40 limited options'); }
+      if (bmi >= 29 && bmi <= 32) { flags.push('BMI borderline 29-32'); }
+    }
+
+    return {
+      agency_ready: ready ? 'YES' : 'NO',
+      qualification_flags: flags.length > 0 ? flags.join(' | ') : 'None'
+    };
+  }
+
   function calculateHiddenFields() {
     // BMI
     const feetEl = document.getElementById('feet');
@@ -290,6 +320,22 @@ document.addEventListener('DOMContentLoaded', function () {
     var priorBirthsEl = document.getElementById('prior_births');
     if (birthFlagEl && priorBirthsEl) {
       birthFlagEl.value = parseInt(priorBirthsEl.value, 10) === 0 ? 'No prior births' : '';
+    }
+
+    // Agency ready + qualification flags
+    var agencyReadyEl = document.getElementById('agency-ready');
+    var qualFlagsEl = document.getElementById('qualification-flags');
+    if (agencyReadyEl && qualFlagsEl) {
+      var bmiVal = parseFloat(bmiHidden ? bmiHidden.value : 0) || 0;
+      var ageVal = ageEl ? parseInt(ageEl.value, 10) : 0;
+      var tobaccoEl = document.getElementById('tobacco_use') || document.querySelector('input[name="tobacco_use"]:checked');
+      var tobaccoVal = tobaccoEl ? (tobaccoEl.tagName === 'SELECT' ? tobaccoEl.value : tobaccoEl.value) : '';
+      var educationEl = document.getElementById('education');
+      var educationVal = educationEl ? educationEl.value : '';
+      var priorBirthsVal = priorBirthsEl ? parseInt(priorBirthsEl.value, 10) : null;
+      var qual = calculateAgencyReady(serviceType, ageVal, bmiVal, tobaccoVal, educationVal, priorBirthsVal);
+      agencyReadyEl.value = qual.agency_ready;
+      qualFlagsEl.value = qual.qualification_flags;
     }
 
     if (tsHidden) tsHidden.value = new Date().toISOString();
