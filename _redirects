@@ -22,3 +22,6 @@ https://www.eggsurrogatepay.com/* https://eggsurrogatepay.com/:splat 301
 /terms-of-service.html /terms-of-service 301
 /advertise.html /advertise 301
 /thank-you.html /thank-you 301
+
+# Catch-all: strip .html from any other root page
+/*.html /:splat 301
