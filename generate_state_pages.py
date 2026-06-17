@@ -104,6 +104,9 @@ NAV = """<nav class="nav">
   </div>
 </nav>"""
 
+# No mailto: links or raw email text here — Cloudflare's email obfuscation
+# rewrites both into /cdn-cgi/l/email-protection, which crawlers report as 404.
+# Use /contact.html instead.
 FOOTER = """<footer class="footer">
   <div class="container">
     <div class="footer__inner">
@@ -127,7 +130,7 @@ FOOTER = """<footer class="footer">
       </div>
     </div>
     <div class="footer__bottom">
-      <span>© 2026 EggSurrogatePay.com · hello@eggsurrogatepay.com</span>
+      <span>© 2026 EggSurrogatePay.com</span>
       <div class="footer__legal">
         <a href="../privacy-policy.html">Privacy Policy</a>
         <a href="../terms-of-service.html">Terms of Service</a>
@@ -136,7 +139,7 @@ FOOTER = """<footer class="footer">
         <a href="../faq.html">FAQ</a>
         <a href="../about.html">About</a>
         <a href="../data-sources.html">Data Sources</a>
-        <a href="mailto:hello@eggsurrogatepay.com">Contact</a>
+        <a href="../contact.html">Contact</a>
       </div>
     </div>
   </div>
@@ -267,18 +270,18 @@ def generate_egg_donor_page(state):
       'service_type': 'egg_donor',
       'state_tier': '{tier}'
     }});
-  (function() {
-    function _loadGA() {
+  (function() {{
+    function _loadGA() {{
       var s = document.createElement('script');
       s.src = 'https://www.googletagmanager.com/gtag/js?id=G-RR00CQ3CMS';
       s.async = true;
-      s.onload = function() { gtag('event', 'page_engaged'); };
+      s.onload = function() {{ gtag('event', 'page_engaged'); }};
       document.head.appendChild(s);
-    }
-    ['mousedown','scroll','touchstart','keydown'].forEach(function(e) {
-      document.addEventListener(e, _loadGA, {once: true, passive: true});
-    });
-  })();
+    }}
+    ['mousedown','scroll','touchstart','keydown'].forEach(function(e) {{
+      document.addEventListener(e, _loadGA, {{once: true, passive: true}});
+    }});
+  }})();
   </script>
 </head>
 <body>
@@ -480,18 +483,18 @@ def generate_surrogate_page_illegal(state):
     gtag('js', new Date());
     gtag('config', 'G-RR00CQ3CMS');
     gtag('event', 'state_page_viewed', {{'state': '{name}', 'service_type': 'surrogate', 'surrogate_legal': false}});
-  (function() {
-    function _loadGA() {
+  (function() {{
+    function _loadGA() {{
       var s = document.createElement('script');
       s.src = 'https://www.googletagmanager.com/gtag/js?id=G-RR00CQ3CMS';
       s.async = true;
-      s.onload = function() { gtag('event', 'page_engaged'); };
+      s.onload = function() {{ gtag('event', 'page_engaged'); }};
       document.head.appendChild(s);
-    }
-    ['mousedown','scroll','touchstart','keydown'].forEach(function(e) {
-      document.addEventListener(e, _loadGA, {once: true, passive: true});
-    });
-  })();
+    }}
+    ['mousedown','scroll','touchstart','keydown'].forEach(function(e) {{
+      document.addEventListener(e, _loadGA, {{once: true, passive: true}});
+    }});
+  }})();
   </script>
 </head>
 <body>
@@ -590,18 +593,18 @@ def generate_surrogate_page(state):
       'state_tier': '{tier}',
       'surrogate_legal': true
     }});
-  (function() {
-    function _loadGA() {
+  (function() {{
+    function _loadGA() {{
       var s = document.createElement('script');
       s.src = 'https://www.googletagmanager.com/gtag/js?id=G-RR00CQ3CMS';
       s.async = true;
-      s.onload = function() { gtag('event', 'page_engaged'); };
+      s.onload = function() {{ gtag('event', 'page_engaged'); }};
       document.head.appendChild(s);
-    }
-    ['mousedown','scroll','touchstart','keydown'].forEach(function(e) {
-      document.addEventListener(e, _loadGA, {once: true, passive: true});
-    });
-  })();
+    }}
+    ['mousedown','scroll','touchstart','keydown'].forEach(function(e) {{
+      document.addEventListener(e, _loadGA, {{once: true, passive: true}});
+    }});
+  }})();
   </script>
 </head>
 <body>
