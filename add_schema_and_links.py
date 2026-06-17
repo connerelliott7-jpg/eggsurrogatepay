@@ -24,29 +24,29 @@ NEW_FOOTER_GUIDE = '''<footer class="footer">
       </div>
       <div class="footer__col">
         <h4>Egg Donation</h4>
-        <a href="../egg-donor-pay.html">Pay Calculator</a>
-        <a href="../egg-donor-requirements.html">Requirements</a>
-        <a href="../how-egg-donation-works.html">How It Works</a>
-        <a href="../egg-donor-application.html">Apply Now</a>
+        <a href="../egg-donor-pay">Pay Calculator</a>
+        <a href="../egg-donor-requirements">Requirements</a>
+        <a href="../how-egg-donation-works">How It Works</a>
+        <a href="../egg-donor-application">Apply Now</a>
       </div>
       <div class="footer__col">
         <h4>Surrogacy</h4>
-        <a href="../surrogate-pay.html">Pay Calculator</a>
-        <a href="../surrogate-requirements.html">Requirements</a>
-        <a href="../how-surrogacy-works.html">How It Works</a>
-        <a href="../surrogate-application.html">Apply Now</a>
+        <a href="../surrogate-pay">Pay Calculator</a>
+        <a href="../surrogate-requirements">Requirements</a>
+        <a href="../how-surrogacy-works">How It Works</a>
+        <a href="../surrogate-application">Apply Now</a>
       </div>
     </div>
     <div class="footer__bottom">
       <span>© 2026 EggSurrogatePay.com · hello@eggsurrogatepay.com</span>
       <div class="footer__legal">
-        <a href="../privacy-policy.html">Privacy Policy</a>
-        <a href="../terms-of-service.html">Terms of Service</a>
-        <a href="../disclaimer.html">Disclaimer</a>
-        <a href="../methodology.html">Methodology</a>
-        <a href="../faq.html">FAQ</a>
-        <a href="../about.html">About</a>
-        <a href="../data-sources.html">Data Sources</a>
+        <a href="../privacy-policy">Privacy Policy</a>
+        <a href="../terms-of-service">Terms of Service</a>
+        <a href="../disclaimer">Disclaimer</a>
+        <a href="../methodology">Methodology</a>
+        <a href="../faq">FAQ</a>
+        <a href="../about">About</a>
+        <a href="../data-sources">Data Sources</a>
         <a href="mailto:hello@eggsurrogatepay.com">Contact</a>
       </div>
     </div>
@@ -68,29 +68,29 @@ NEW_FOOTER_ROOT = '''<footer class="footer">
       </div>
       <div class="footer__col">
         <h4>Egg Donation</h4>
-        <a href="/egg-donor-pay.html">Pay Calculator</a>
-        <a href="/egg-donor-requirements.html">Requirements</a>
-        <a href="/how-egg-donation-works.html">How It Works</a>
-        <a href="/egg-donor-application.html">Apply Now</a>
+        <a href="/egg-donor-pay">Pay Calculator</a>
+        <a href="/egg-donor-requirements">Requirements</a>
+        <a href="/how-egg-donation-works">How It Works</a>
+        <a href="/egg-donor-application">Apply Now</a>
       </div>
       <div class="footer__col">
         <h4>Surrogacy</h4>
-        <a href="/surrogate-pay.html">Pay Calculator</a>
-        <a href="/surrogate-requirements.html">Requirements</a>
-        <a href="/how-surrogacy-works.html">How It Works</a>
-        <a href="/surrogate-application.html">Apply Now</a>
+        <a href="/surrogate-pay">Pay Calculator</a>
+        <a href="/surrogate-requirements">Requirements</a>
+        <a href="/how-surrogacy-works">How It Works</a>
+        <a href="/surrogate-application">Apply Now</a>
       </div>
     </div>
     <div class="footer__bottom">
       <span>© 2026 EggSurrogatePay.com · hello@eggsurrogatepay.com</span>
       <div class="footer__legal">
-        <a href="/privacy-policy.html">Privacy Policy</a>
-        <a href="/terms-of-service.html">Terms of Service</a>
-        <a href="/disclaimer.html">Disclaimer</a>
-        <a href="/methodology.html">Methodology</a>
-        <a href="/faq.html">FAQ</a>
-        <a href="/about.html">About</a>
-        <a href="/data-sources.html">Data Sources</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/disclaimer">Disclaimer</a>
+        <a href="/methodology">Methodology</a>
+        <a href="/faq">FAQ</a>
+        <a href="/about">About</a>
+        <a href="/data-sources">Data Sources</a>
         <a href="mailto:hello@eggsurrogatepay.com">Contact</a>
       </div>
     </div>
@@ -159,7 +159,7 @@ def build_schema(page_url, page_type, state_name, faq_items, steps):
             "@type": "BreadcrumbList",
             "itemListElement": [
                 {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://eggsurrogatepay.com/"},
-                {"@type": "ListItem", "position": 2, "name": "Egg Donor Pay", "item": "https://eggsurrogatepay.com/egg-donor-pay.html"},
+                {"@type": "ListItem", "position": 2, "name": "Egg Donor Pay", "item": "https://eggsurrogatepay.com/egg-donor-pay"},
                 {"@type": "ListItem", "position": 3, "name": f"Egg Donor Pay in {state_name}", "item": page_url}
             ]
         }
@@ -171,7 +171,7 @@ def build_schema(page_url, page_type, state_name, faq_items, steps):
             "@type": "BreadcrumbList",
             "itemListElement": [
                 {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://eggsurrogatepay.com/"},
-                {"@type": "ListItem", "position": 2, "name": "Surrogate Pay", "item": "https://eggsurrogatepay.com/surrogate-pay.html"},
+                {"@type": "ListItem", "position": 2, "name": "Surrogate Pay", "item": "https://eggsurrogatepay.com/surrogate-pay"},
                 {"@type": "ListItem", "position": 3, "name": f"Surrogate Pay in {state_name}", "item": page_url}
             ]
         }
@@ -242,7 +242,7 @@ def add_crosslink_egg(content, state_slug, state_name):
         f'flex-wrap:wrap; gap:12px; padding:20px 24px; background:var(--bg-accent); '
         f'border-radius:var(--radius-sm);">\n'
         f'      <p style="margin:0; color:var(--text-light);">Also exploring surrogacy in {state_name}?</p>\n'
-        f'      <a href="surrogate-pay-{state_slug}.html" '
+        f'      <a href="surrogate-pay-{state_slug}" '
         f'style="color:var(--primary); font-weight:600; text-decoration:none; white-space:nowrap;">'
         f'See Surrogate Pay in {state_name} &#8594;</a>\n'
         f'    </div>\n'
@@ -263,7 +263,7 @@ def add_crosslink_surrogate(content, state_slug, state_name):
         f'flex-wrap:wrap; gap:12px; padding:20px 24px; background:var(--bg-accent); '
         f'border-radius:var(--radius-sm);">\n'
         f'      <p style="margin:0; color:var(--text-light);">Also exploring egg donation in {state_name}?</p>\n'
-        f'      <a href="egg-donor-pay-{state_slug}.html" '
+        f'      <a href="egg-donor-pay-{state_slug}" '
         f'style="color:var(--primary); font-weight:600; text-decoration:none; white-space:nowrap;">'
         f'See Egg Donor Pay in {state_name} &#8594;</a>\n'
         f'    </div>\n'
@@ -285,7 +285,7 @@ SITE_SCHEMA = '''<script type="application/ld+json">
     "@type": "SearchAction",
     "target": {
       "@type": "EntryPoint",
-      "urlTemplate": "https://eggsurrogatepay.com/egg-donor-pay.html?state={search_term_string}"
+      "urlTemplate": "https://eggsurrogatepay.com/egg-donor-pay?state={search_term_string}"
     },
     "query-input": "required name=search_term_string"
   }
@@ -418,21 +418,21 @@ old_footer_const = '''FOOTER = """<footer class="footer">
       </div>
       <div class="footer__col">
         <h4>Egg Donation</h4>
-        <a href="../egg-donor-pay.html">Compensation Calculator</a>
-        <a href="../egg-donor-application.html">Apply as Egg Donor</a>
+        <a href="../egg-donor-pay">Compensation Calculator</a>
+        <a href="../egg-donor-application">Apply as Egg Donor</a>
       </div>
       <div class="footer__col">
         <h4>Surrogacy</h4>
-        <a href="../surrogate-pay.html">Compensation Calculator</a>
-        <a href="../surrogate-application.html">Apply as Surrogate</a>
+        <a href="../surrogate-pay">Compensation Calculator</a>
+        <a href="../surrogate-application">Apply as Surrogate</a>
       </div>
     </div>
     <div class="footer__bottom">
       <span>© 2026 EggSurrogatePay.com · hello@eggsurrogatepay.com</span>
       <div class="footer__legal">
-        <a href="../privacy-policy.html">Privacy Policy</a>
-        <a href="../terms-of-service.html">Terms of Service</a>
-        <a href="../methodology.html">Methodology</a>
+        <a href="../privacy-policy">Privacy Policy</a>
+        <a href="../terms-of-service">Terms of Service</a>
+        <a href="../methodology">Methodology</a>
         <a href="mailto:hello@eggsurrogatepay.com">Contact</a>
       </div>
     </div>
@@ -453,29 +453,29 @@ new_footer_const = '''FOOTER = """<footer class="footer">
       </div>
       <div class="footer__col">
         <h4>Egg Donation</h4>
-        <a href="../egg-donor-pay.html">Pay Calculator</a>
-        <a href="../egg-donor-requirements.html">Requirements</a>
-        <a href="../how-egg-donation-works.html">How It Works</a>
-        <a href="../egg-donor-application.html">Apply Now</a>
+        <a href="../egg-donor-pay">Pay Calculator</a>
+        <a href="../egg-donor-requirements">Requirements</a>
+        <a href="../how-egg-donation-works">How It Works</a>
+        <a href="../egg-donor-application">Apply Now</a>
       </div>
       <div class="footer__col">
         <h4>Surrogacy</h4>
-        <a href="../surrogate-pay.html">Pay Calculator</a>
-        <a href="../surrogate-requirements.html">Requirements</a>
-        <a href="../how-surrogacy-works.html">How It Works</a>
-        <a href="../surrogate-application.html">Apply Now</a>
+        <a href="../surrogate-pay">Pay Calculator</a>
+        <a href="../surrogate-requirements">Requirements</a>
+        <a href="../how-surrogacy-works">How It Works</a>
+        <a href="../surrogate-application">Apply Now</a>
       </div>
     </div>
     <div class="footer__bottom">
       <span>© 2026 EggSurrogatePay.com · hello@eggsurrogatepay.com</span>
       <div class="footer__legal">
-        <a href="../privacy-policy.html">Privacy Policy</a>
-        <a href="../terms-of-service.html">Terms of Service</a>
-        <a href="../disclaimer.html">Disclaimer</a>
-        <a href="../methodology.html">Methodology</a>
-        <a href="../faq.html">FAQ</a>
-        <a href="../about.html">About</a>
-        <a href="../data-sources.html">Data Sources</a>
+        <a href="../privacy-policy">Privacy Policy</a>
+        <a href="../terms-of-service">Terms of Service</a>
+        <a href="../disclaimer">Disclaimer</a>
+        <a href="../methodology">Methodology</a>
+        <a href="../faq">FAQ</a>
+        <a href="../about">About</a>
+        <a href="../data-sources">Data Sources</a>
         <a href="mailto:hello@eggsurrogatepay.com">Contact</a>
       </div>
     </div>

@@ -96,9 +96,9 @@ NAV = """<nav class="nav">
         <span></span><span></span><span></span>
       </button>
       <div class="nav__links" id="nav-links">
-        <a href="../egg-donor-pay.html">Egg Donor Pay</a>
-        <a href="../surrogate-pay.html">Surrogate Pay</a>
-        <a href="../egg-donor-application.html" class="btn--nav">Apply Now</a>
+        <a href="../egg-donor-pay">Egg Donor Pay</a>
+        <a href="../surrogate-pay">Surrogate Pay</a>
+        <a href="../egg-donor-application" class="btn--nav">Apply Now</a>
       </div>
     </div>
   </div>
@@ -106,7 +106,7 @@ NAV = """<nav class="nav">
 
 # No mailto: links or raw email text here — Cloudflare's email obfuscation
 # rewrites both into /cdn-cgi/l/email-protection, which crawlers report as 404.
-# Use /contact.html instead.
+# Use /contact instead.
 FOOTER = """<footer class="footer">
   <div class="container">
     <div class="footer__inner">
@@ -116,30 +116,30 @@ FOOTER = """<footer class="footer">
       </div>
       <div class="footer__col">
         <h4>Egg Donation</h4>
-        <a href="../egg-donor-pay.html">Pay Calculator</a>
-        <a href="../egg-donor-requirements.html">Requirements</a>
-        <a href="../how-egg-donation-works.html">How It Works</a>
-        <a href="../egg-donor-application.html">Apply Now</a>
+        <a href="../egg-donor-pay">Pay Calculator</a>
+        <a href="../egg-donor-requirements">Requirements</a>
+        <a href="../how-egg-donation-works">How It Works</a>
+        <a href="../egg-donor-application">Apply Now</a>
       </div>
       <div class="footer__col">
         <h4>Surrogacy</h4>
-        <a href="../surrogate-pay.html">Pay Calculator</a>
-        <a href="../surrogate-requirements.html">Requirements</a>
-        <a href="../how-surrogacy-works.html">How It Works</a>
-        <a href="../surrogate-application.html">Apply Now</a>
+        <a href="../surrogate-pay">Pay Calculator</a>
+        <a href="../surrogate-requirements">Requirements</a>
+        <a href="../how-surrogacy-works">How It Works</a>
+        <a href="../surrogate-application">Apply Now</a>
       </div>
     </div>
     <div class="footer__bottom">
       <span>© 2026 EggSurrogatePay.com</span>
       <div class="footer__legal">
-        <a href="../privacy-policy.html">Privacy Policy</a>
-        <a href="../terms-of-service.html">Terms of Service</a>
-        <a href="../disclaimer.html">Disclaimer</a>
-        <a href="../methodology.html">Methodology</a>
-        <a href="../faq.html">FAQ</a>
-        <a href="../about.html">About</a>
-        <a href="../data-sources.html">Data Sources</a>
-        <a href="../contact.html">Contact</a>
+        <a href="../privacy-policy">Privacy Policy</a>
+        <a href="../terms-of-service">Terms of Service</a>
+        <a href="../disclaimer">Disclaimer</a>
+        <a href="../methodology">Methodology</a>
+        <a href="../faq">FAQ</a>
+        <a href="../about">About</a>
+        <a href="../data-sources">Data Sources</a>
+        <a href="../contact">Contact</a>
       </div>
     </div>
   </div>
@@ -151,21 +151,21 @@ FOOTER = """<footer class="footer">
 </script>"""
 
 EGG_COMPARE_LINKS = """<div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px;">
-  <a href="egg-donor-pay-california.html" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>California</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$11,000–$17,000</span></a>
-  <a href="egg-donor-pay-new-york.html" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>New York</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$11,000–$17,000</span></a>
-  <a href="egg-donor-pay-texas.html" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>Texas</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$9,000–$14,000</span></a>
-  <a href="egg-donor-pay-florida.html" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>Florida</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$9,000–$14,000</span></a>
-  <a href="egg-donor-pay-illinois.html" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>Illinois</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$9,000–$14,000</span></a>
-  <a href="egg-donor-pay-colorado.html" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>Colorado</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$9,000–$14,000</span></a>
+  <a href="egg-donor-pay-california" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>California</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$11,000–$17,000</span></a>
+  <a href="egg-donor-pay-new-york" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>New York</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$11,000–$17,000</span></a>
+  <a href="egg-donor-pay-texas" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>Texas</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$9,000–$14,000</span></a>
+  <a href="egg-donor-pay-florida" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>Florida</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$9,000–$14,000</span></a>
+  <a href="egg-donor-pay-illinois" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>Illinois</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$9,000–$14,000</span></a>
+  <a href="egg-donor-pay-colorado" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>Colorado</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$9,000–$14,000</span></a>
 </div>"""
 
 SURROGATE_COMPARE_LINKS = """<div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px;">
-  <a href="surrogate-pay-california.html" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>California</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$67,000–$98,000</span></a>
-  <a href="surrogate-pay-new-york.html" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>New York</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$67,000–$98,000</span></a>
-  <a href="surrogate-pay-texas.html" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>Texas</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$57,000–$83,000</span></a>
-  <a href="surrogate-pay-florida.html" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>Florida</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$57,000–$83,000</span></a>
-  <a href="surrogate-pay-illinois.html" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>Illinois</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$57,000–$83,000</span></a>
-  <a href="surrogate-pay-colorado.html" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>Colorado</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$57,000–$83,000</span></a>
+  <a href="surrogate-pay-california" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>California</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$67,000–$98,000</span></a>
+  <a href="surrogate-pay-new-york" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>New York</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$67,000–$98,000</span></a>
+  <a href="surrogate-pay-texas" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>Texas</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$57,000–$83,000</span></a>
+  <a href="surrogate-pay-florida" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>Florida</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$57,000–$83,000</span></a>
+  <a href="surrogate-pay-illinois" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>Illinois</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$57,000–$83,000</span></a>
+  <a href="surrogate-pay-colorado" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>Colorado</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$57,000–$83,000</span></a>
 </div>"""
 
 
@@ -258,7 +258,7 @@ def generate_egg_donor_page(state):
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{name} Egg Donor Pay 2026: Earn {fmt(first_min)}–{fmt(first_max)}</title>
   <meta name="description" content="Earn {fmt(first_min)}–{fmt(first_max)} as an egg donor in {name}. See requirements, timeline, and how to apply for 2026 programs.">
-  <link rel="canonical" href="https://eggsurrogatepay.com/guides/egg-donor-pay-{slug}.html">
+  <link rel="canonical" href="https://eggsurrogatepay.com/guides/egg-donor-pay-{slug}">
   <link rel="stylesheet" href="../assets/styles.css">
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -435,7 +435,7 @@ def generate_egg_donor_page(state):
     </div>
     {EGG_COMPARE_LINKS}
     <div class="text-center" style="margin-top:24px;">
-      <a href="../egg-donor-pay.html" class="btn btn--outline">View All States + Calculator →</a>
+      <a href="../egg-donor-pay" class="btn btn--outline">View All States + Calculator →</a>
     </div>
   </div>
 </section>
@@ -446,8 +446,8 @@ def generate_egg_donor_page(state):
       <h2 style="font-size:1.6rem; font-weight:800; color:var(--primary); margin-bottom:12px;">Ready to Apply in {name}?</h2>
       <p style="color:var(--text-light); margin-bottom:32px;">Complete our 10-minute application. We'll connect you with licensed agencies serving {name}.</p>
       <div class="btn-group" style="justify-content:center;">
-        <a href="../egg-donor-application.html" class="btn btn--primary btn--lg" onclick="gtag('event','application_started',{{'source':'state_page','state':'{name}','service_type':'egg_donor'}});">Start Your Application →</a>
-        <a href="../egg-donor-pay.html" class="btn btn--outline">Calculate Your Pay</a>
+        <a href="../egg-donor-application" class="btn btn--primary btn--lg" onclick="gtag('event','application_started',{{'source':'state_page','state':'{name}','service_type':'egg_donor'}});">Start Your Application →</a>
+        <a href="../egg-donor-pay" class="btn btn--outline">Calculate Your Pay</a>
       </div>
     </div>
   </div>
@@ -475,7 +475,7 @@ def generate_surrogate_page_illegal(state):
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Surrogacy in {name} (2026) | EggSurrogatePay.com</title>
   <meta name="description" content="Learn about surrogacy laws in {name} and egg donor opportunities available to residents. Egg donors in {name} earn $7,000–$12,000.">
-  <link rel="canonical" href="https://eggsurrogatepay.com/guides/surrogate-pay-{slug}.html">
+  <link rel="canonical" href="https://eggsurrogatepay.com/guides/surrogate-pay-{slug}">
   <link rel="stylesheet" href="../assets/styles.css">
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -519,7 +519,7 @@ def generate_surrogate_page_illegal(state):
     <div style="background:var(--bg-accent); border:1px solid rgba(45,95,93,0.15); border-radius:var(--radius); padding:32px; text-align:center;">
       <h2 style="font-size:1.3rem; font-weight:800; color:var(--primary); margin-bottom:12px;">Egg Donation Is Available in {name}</h2>
       <p style="color:var(--text-light); margin-bottom:24px;">Egg donation is fully legal in {name}. First-time egg donors earn $7,000–$12,000, plus travel and expense reimbursement.</p>
-      <a href="egg-donor-pay-{slug}.html" class="btn btn--primary">Learn About Egg Donation in {name} →</a>
+      <a href="egg-donor-pay-{slug}" class="btn btn--primary">Learn About Egg Donation in {name} →</a>
     </div>
   </div>
 </section>
@@ -532,12 +532,12 @@ def generate_surrogate_page_illegal(state):
       <p class="section__subtitle">Many {name} residents pursue surrogacy in neighboring states with clear legal frameworks</p>
     </div>
     <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px;">
-      <a href="surrogate-pay-illinois.html" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>Illinois</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$57,000–$83,000</span></a>
-      <a href="surrogate-pay-colorado.html" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>Colorado</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$57,000–$83,000</span></a>
-      <a href="surrogate-pay-nevada.html" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>Nevada</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$57,000–$83,000</span></a>
-      <a href="surrogate-pay-california.html" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>California</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$67,000–$98,000</span></a>
-      <a href="surrogate-pay-washington.html" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>Washington</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$57,000–$83,000</span></a>
-      <a href="surrogate-pay-oregon.html" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>Oregon</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$57,000–$83,000</span></a>
+      <a href="surrogate-pay-illinois" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>Illinois</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$57,000–$83,000</span></a>
+      <a href="surrogate-pay-colorado" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>Colorado</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$57,000–$83,000</span></a>
+      <a href="surrogate-pay-nevada" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>Nevada</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$57,000–$83,000</span></a>
+      <a href="surrogate-pay-california" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>California</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$67,000–$98,000</span></a>
+      <a href="surrogate-pay-washington" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>Washington</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$57,000–$83,000</span></a>
+      <a href="surrogate-pay-oregon" class="feature-card" style="text-align:center; padding:16px; text-decoration:none;"><strong>Oregon</strong><br><span style="color:var(--text-muted); font-size:0.88rem;">$57,000–$83,000</span></a>
     </div>
   </div>
 </section>
@@ -580,7 +580,7 @@ def generate_surrogate_page(state):
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{name} Surrogate Pay 2026: Earn {fmt(first_min)}–{fmt(first_max)}</title>
   <meta name="description" content="Earn {fmt(first_min)}–{fmt(first_max)} as a surrogate in {name}. See base pay, allowances, and requirements for 2026 placements.">
-  <link rel="canonical" href="https://eggsurrogatepay.com/guides/surrogate-pay-{slug}.html">
+  <link rel="canonical" href="https://eggsurrogatepay.com/guides/surrogate-pay-{slug}">
   <link rel="stylesheet" href="../assets/styles.css">
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -740,7 +740,7 @@ def generate_surrogate_page(state):
     </div>
     {SURROGATE_COMPARE_LINKS}
     <div class="text-center" style="margin-top:24px;">
-      <a href="../surrogate-pay.html" class="btn btn--outline">View All States + Calculator →</a>
+      <a href="../surrogate-pay" class="btn btn--outline">View All States + Calculator →</a>
     </div>
   </div>
 </section>
@@ -751,8 +751,8 @@ def generate_surrogate_page(state):
       <h2 style="font-size:1.6rem; font-weight:800; color:var(--primary); margin-bottom:12px;">Ready to Apply in {name}?</h2>
       <p style="color:var(--text-light); margin-bottom:32px;">Complete our 10-minute application. We'll connect you with licensed agencies serving {name}.</p>
       <div class="btn-group" style="justify-content:center;">
-        <a href="../surrogate-application.html" class="btn btn--primary btn--lg" onclick="gtag('event','application_started',{{'source':'state_page','state':'{name}','service_type':'surrogate'}});">Start Your Application →</a>
-        <a href="../surrogate-pay.html" class="btn btn--outline">Calculate Your Pay</a>
+        <a href="../surrogate-application" class="btn btn--primary btn--lg" onclick="gtag('event','application_started',{{'source':'state_page','state':'{name}','service_type':'surrogate'}});">Start Your Application →</a>
+        <a href="../surrogate-pay" class="btn btn--outline">Calculate Your Pay</a>
       </div>
     </div>
   </div>

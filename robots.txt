@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Disallow: /thank-you.html
+Disallow: /thank-you
 
 # Block known scraper/spam bots — not search engines
 User-agent: AhrefsBot
