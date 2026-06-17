@@ -147,7 +147,7 @@ function initEggDonorCalc(form) {
 
     // Render results
     resultsEl.innerHTML = `
-      <a href="/egg-donor-application.html" class="btn btn--secondary btn--full" style="font-size:1.05rem;padding:16px;margin-bottom:12px;" onclick="trackAppStart('egg_donor')">
+      <a href="/egg-donor-application" class="btn btn--secondary btn--full" style="font-size:1.05rem;padding:16px;margin-bottom:12px;" onclick="trackAppStart('egg_donor')">
         Apply Now — Earn Up to ${fmt(totalMax)} →
       </a>
       <div class="results-card">
@@ -274,7 +274,7 @@ function initSurrogateCalc(form) {
     const expLabel = expValue === 'first' ? 'First-Time Surrogate' : expValue === 'once' ? 'Experienced Surrogate (1 prior)' : 'Experienced Surrogate (2+)';
 
     resultsEl.innerHTML = `
-      <a href="/surrogate-application.html" class="btn btn--secondary btn--full" style="font-size:1.05rem;padding:16px;margin-bottom:12px;" onclick="trackAppStart('surrogate')">
+      <a href="/surrogate-application" class="btn btn--secondary btn--full" style="font-size:1.05rem;padding:16px;margin-bottom:12px;" onclick="trackAppStart('surrogate')">
         Apply Now — Earn Up to ${fmt(totalMax)} →
       </a>
       <div class="results-card">
