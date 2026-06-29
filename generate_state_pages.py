@@ -446,7 +446,7 @@ def generate_egg_donor_page(state):
       <h2 style="font-size:1.6rem; font-weight:800; color:var(--primary); margin-bottom:12px;">Ready to Apply in {name}?</h2>
       <p style="color:var(--text-light); margin-bottom:32px;">Complete our 10-minute application. We'll connect you with licensed agencies serving {name}.</p>
       <div class="btn-group" style="justify-content:center;">
-        <a href="../egg-donor-application" class="btn btn--primary btn--lg" onclick="gtag('event','application_started',{{'source':'state_page','state':'{name}','service_type':'egg_donor'}});">Start Your Application →</a>
+        <a href="../egg-donor-application" class="btn btn--primary btn--lg" onclick="gtag('event','cta_click',{{'cta_type':'start_application','page_location':window.location.pathname}});">Start Your Application →</a>
         <a href="../egg-donor-pay" class="btn btn--outline">Calculate Your Pay</a>
       </div>
     </div>
@@ -751,7 +751,7 @@ def generate_surrogate_page(state):
       <h2 style="font-size:1.6rem; font-weight:800; color:var(--primary); margin-bottom:12px;">Ready to Apply in {name}?</h2>
       <p style="color:var(--text-light); margin-bottom:32px;">Complete our 10-minute application. We'll connect you with licensed agencies serving {name}.</p>
       <div class="btn-group" style="justify-content:center;">
-        <a href="../surrogate-application" class="btn btn--primary btn--lg" onclick="gtag('event','application_started',{{'source':'state_page','state':'{name}','service_type':'surrogate'}});">Start Your Application →</a>
+        <a href="../surrogate-application" class="btn btn--primary btn--lg" onclick="gtag('event','cta_click',{{'cta_type':'start_application','page_location':window.location.pathname}});">Start Your Application →</a>
         <a href="../surrogate-pay" class="btn btn--outline">Calculate Your Pay</a>
       </div>
     </div>

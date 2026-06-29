@@ -196,10 +196,6 @@ function initEggDonorCalc(form) {
         tier: tier,
         experience: expValue
       });
-      gtag('event', 'calculator_complete', {
-        event_category: 'engagement',
-        page_path: window.location.pathname
-      });
     }
   });
 }
@@ -331,10 +327,6 @@ function initSurrogateCalc(form) {
         tier: tier,
         experience: expValue
       });
-      gtag('event', 'calculator_complete', {
-        event_category: 'engagement',
-        page_path: window.location.pathname
-      });
     }
   });
 }
@@ -362,6 +354,9 @@ function clearFieldError(inputId) {
 
 function trackAppStart(serviceType) {
   if (typeof gtag === 'function') {
-    gtag('event', 'application_started', { service_type: serviceType });
+    gtag('event', 'cta_click', {
+      cta_type: 'start_application',
+      page_location: window.location.pathname
+    });
   }
 }

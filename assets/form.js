@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
         currentStep = fromStep + 1;
         showStep(currentStep);
         if (typeof gtag === 'function') {
-          gtag('event', 'step_' + fromStep + '_completed', { service_type: serviceType });
+          gtag('event', 'form_step_completed', { service_type: serviceType, step: fromStep });
         }
       }
     });
@@ -146,7 +146,10 @@ document.addEventListener('DOMContentLoaded', function () {
           ].join('');
 
           if (typeof gtag === 'function') {
-            gtag('event', 'application_submitted', { service_type: serviceVal });
+            gtag('event', 'lead_form_submit', {
+              form_type: serviceVal === 'surrogate' ? 'surrogate_application' : 'egg_donor_application',
+              state: stateVal || 'unknown'
+            });
           }
           window.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
@@ -339,16 +342,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (tsHidden) tsHidden.value = new Date().toISOString();
-
-    // GA4
-    if (typeof gtag === 'function') {
-      const stateEl = document.getElementById('form-state');
-      gtag('event', 'application_submitted', {
-        service_type: serviceType,
-        age: ageEl ? ageEl.value : 'unknown',
-        state: stateEl ? stateEl.value : 'unknown'
-      });
-    }
+    // NOTE: lead_form_submit fires only on confirmed Formspree success (see submit handler below) —
+    // do not fire a submit-tracking event here, this runs before the fetch is even attempted.
   }
 
   // Initialize
