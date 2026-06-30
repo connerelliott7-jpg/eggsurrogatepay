@@ -146,7 +146,10 @@ document.addEventListener('DOMContentLoaded', function () {
           ].join('');
 
           if (typeof gtag === 'function') {
-            gtag('event', 'lead_form_submit', {
+            // Distinct event names so egg-donor and surrogate leads can be tracked
+            // as separate GA4 Key Events instead of being merged under one event.
+            var leadEventName = serviceVal === 'surrogate' ? 'surrogate_lead_submitted' : 'egg_donor_lead_submitted';
+            gtag('event', leadEventName, {
               form_type: serviceVal === 'surrogate' ? 'surrogate_application' : 'egg_donor_application',
               state: stateVal || 'unknown'
             });
